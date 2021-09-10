@@ -1,0 +1,151 @@
+.errors {
+    background-color: grey;
+    color: red;
+    text-transform: capitalize;
+}
+
+body{
+    background-image: linear-gradient(to top right,rgba(0, 0, 0, .15), rgba(0, 0, 0, .15)),url(/assets/gloves2.jpg);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;  
+    padding-bottom: 3.5%;
+}
+
+#header {
+    font-family: 'Special Elite', sans-serif;
+    text-shadow: 
+        .05em 0 0 red,
+        -.025em -.05em 0 green,
+        .025em .05em 0 blue;  
+    font-size: 50px;
+    color: white;
+    padding: 35px;
+    position: relative;
+    animation: glitch 525ms infinite;
+    animation-duration: 5s;
+}
+
+h1 {
+    font-family: 'Special Elite', sans-serif;
+    font-size: 52px;
+    color: white;
+}
+
+h2 {
+    font-family: 'Special Elite', sans-serif;
+    font-size: x-large;
+    color: white;
+}
+
+h3 {
+    font-family: 'Big Shoulders Stencil Text', sans-serif;
+    padding-top: 0px;
+    padding-left: 15px;
+    font-size: medium;
+    color: white;
+}
+
+.btn {
+    border-color: red;
+    background-color: red;
+    padding: 5px;
+    padding-bottom: 0px;
+}
+.btn:hover {
+    border-color: darkred;
+    background-color:darkred;
+}
+
+.align {
+    position: absolute;
+    left: 250px
+}
+
+.hide {display: none;}
+
+#header span {
+    position: absolute;
+    padding: 35px;
+    top: 0;
+    left: 0;
+}
+
+.title {
+    border-bottom : 1px solid white;
+}
+
+#login {
+    animation: slideIn 1.75s;
+}
+
+@keyframes slideIn{
+    from{
+        margin-left: -100%;
+        opacity: 0;
+        transform: rotateY(-10deg);
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 
+        .025em -.025em 0 red,
+        -.05em -.05em 0 green,
+        -.025em .05em 0 blue;  
+    }
+    14% {
+        text-shadow: 
+        .025em -.025em 0 red,
+        -.05em -.05em 0 green,
+        -.025em .05em 0 blue;  
+    }
+    15% {
+        text-shadow: 
+        -.05em 0 0 red,
+        .025em .025em 0 green,
+        -.075em .05em 0 blue;  
+    }
+    49% {
+        text-shadow: 
+        -.05em 0 0 red,
+        .025em .025em 0 green,
+        -.075em .05em 0 blue;  
+    }
+    50% {
+        text-shadow: 
+        .025em .05em 0 red,
+        .05em 0 0 green,
+        -.05em -.05em 0 blue;  
+    }
+    99% {
+        text-shadow: 
+        .025em .05em 0 red,
+        .05em 0 0 green,
+        -.05em -.05em 0 blue;  
+    }
+    100% {
+        text-shadow: 
+        .75em -.1em 0 red,
+        -.25em 0 0 green,
+        0 .5em 0 blue;  
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+}

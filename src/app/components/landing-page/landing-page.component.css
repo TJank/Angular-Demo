@@ -1,0 +1,123 @@
+video {
+    height: auto;
+    width: 100%;
+    padding-bottom: 2px;
+}
+button {
+    border-radius: 100%;
+    float: left;
+    position: absolute;
+    padding: 0px;
+    left: 45px; 
+    bottom: 45px;
+    z-index: 1;
+
+}
+header{
+    background-image: linear-gradient(to top right,rgba(0, 0, 0, .15), rgba(0, 0, 0, .15)),url(/assets/gloves.jpg);
+    padding-top: 10px;
+}
+body{
+    background-image: linear-gradient(to top right,rgba(0, 0, 0, .15), rgba(0, 0, 0, .15)),url(/assets/gloves.jpg);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;     
+    padding-top: 5px;
+}
+
+h1{
+    font-family: 'Special Elite', sans-serif;
+    font-size: x-large;
+    color: white;
+}
+
+#video{
+   animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        background-color: darkred;
+        border-color: darkred;
+        opacity: 50%;
+    }
+    50% {
+        background-color: orangered; 
+        border-color: orangered;
+        opacity: 75%; 
+    }
+    100% {
+        background-color: red;
+        border-color: red;
+        opacity: 100%;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 
+        .025em -.025em 0 red,
+        -.05em -.05em 0 green,
+        -.025em .05em 0 blue;  
+    }
+    14% {
+        text-shadow: 
+        .025em -.025em 0 red,
+        -.05em -.05em 0 green,
+        -.025em .05em 0 blue;  
+    }
+    15% {
+        text-shadow: 
+        -.05em 0 0 red,
+        .025em .025em 0 green,
+        -.075em .05em 0 blue;  
+    }
+    49% {
+        text-shadow: 
+        -.05em 0 0 red,
+        .025em .025em 0 green,
+        -.075em .05em 0 blue;  
+    }
+    50% {
+        text-shadow: 
+        .025em .05em 0 red,
+        .05em 0 0 green,
+        -.05em -.05em 0 blue;  
+    }
+    99% {
+        text-shadow: 
+        .025em .05em 0 red,
+        .05em 0 0 green,
+        -.05em -.05em 0 blue;  
+    }
+    100% {
+        text-shadow: 
+        .75em -.1em 0 red,
+        -.25em 0 0 green,
+        0 .5em 0 blue;  
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+}
+
+    

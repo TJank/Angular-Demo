@@ -1,0 +1,118 @@
+<app-landing-navbar></app-landing-navbar>
+
+<body>
+    <header>
+        
+        <h1 id="header" class="glitch text-center"> Welcome To Optimal Performance! </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4 btn-group" role="group" aria-label="Basic example">
+                    <button type="button" (click)="loginTransition()" class="btn btn-danger">
+                        <h2>Login</h2>
+                    </button>
+                    <button type="button" (click)="signupTransition()" class="btn btn-danger"><h2>Sign Up</h2></button>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </header> <br>
+    <div class="container">
+        <div id="login" style="padding-bottom: 30px;">
+            <div class="title row"><h1>Login</h1></div> <br><br>
+            <div class="col-12">
+                <form (ngSubmit)="login()" #loginForm="ngForm">
+                    <div class="form-group row">
+                        <label class="col-form-control" for="name"><h2> Email/Username: </h2></label>
+                        <div class="align col-7">
+                           <h2> <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Email/Username" required></h2>
+                        </div>
+                    </div> 
+                    <div class="form-group row">
+                        <label class="col-form-control" for="password"><h2> Password:</h2> </label>
+                        <div class="align col-7">
+                           <h2> <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Password" required> </h2>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <button class="col-4 btn btn-danger" type="submit" ><h2>Login</h2></button>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="signup" class="hide container">
+        <div id="signup">
+            <div  class="row title"><h1>Sign Up</h1></div> <br><br>
+            <div class="col-12">
+                <form (ngSubmit)="register()" #registerForm="ngForm">
+                <div class="form-group row">
+                    <label for="name"><h2>Email: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" placeholder="Email" class="form-control" id="email" [(ngModel)]="email" name="email" required></h2>
+                    </div>
+                </div>    
+                <div class="form-group row">
+                    <label for="username"> <h2>Username: </h2></label>
+                    <div class="align col-8">
+                        <h2><input placeholder="Username" type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required></h2>
+                    </div>
+                </div>    
+                <div class="form-group row">
+                    <label for="firstname"> <h2>First Name: </h2></label>
+                    <div class="align col-8">
+                        <h2><input placeholder="First Name" type="text" class="form-control" id="firstname" [(ngModel)]="firstname" name="firstname" required></h2>
+                    </div>
+                </div>    
+                <div class="form-group row">
+                    <label for="lastname"><h2>Last Name: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" placeholder="Last Name" class="form-control" id="lastname" [(ngModel)]="lastname" name="lastname" required></h2>
+                    </div>
+                </div>    
+                <div class="form-group row">
+                    <label for="dateofbirth"><h2>Birthdate: </h2></label> 
+                    <div class="align col-6">
+                        <input [(ngModel)]="dateofbirth" type="date" name="dateofbirth" id="dateofbirth" required>     
+                    </div>
+                    <label for="phonenumber"><h2 style="padding-bottom: 10px; padding-left: 289px;">Phone Number: </h2></label>
+                    <div class="col-4">
+                        <h2><input placeholder="XXX-XXX-XXXX" pattern="[1-9]{1}[0-9]{11}" type="tel" class="form-control" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber" required></h2>
+                    </div>
+                </div>             
+                <div class="form-group row">
+                    <label for="registerPassword"><h2>Password: </h2></label>
+                    <div class="align col-8">
+                        <h2><input placeholder="Password" class="form-control" [(ngModel)]="registerPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="registerPassword" id="registerPassword" required></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="verifyPassword"><h2>Verify Password:</h2></label>
+                    <div class="align col-8">
+                        <h2><input placeholder="Verify Password" class="form-control" [(ngModel)]="verifyPassword" type="password" name="verifyPassword" id="verifyPassword" required></h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                    <div class="col-4"></div>
+                        <button type="submit" class="col-4 btn btn-danger" (click)="showModal=true" data-toggle="modal"><h2>Sign Up</h2></button>
+                    <div class="col"></div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+
+
+
+<app-footer></app-footer>
