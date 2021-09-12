@@ -1,0 +1,17 @@
+nav {
+    background-image: linear-gradient(to top right, darkred,red);
+}
+.navbar-brand {
+    padding-left: 10px;
+}
+
+#imgLogo{
+    width: 30px;
+    height: 30px;
+    padding-right: 5px;
+    align-content: center;
+}
+
+.navbar {
+    font-family: BananaYeti;
+}

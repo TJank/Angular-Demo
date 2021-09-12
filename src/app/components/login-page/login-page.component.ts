@@ -70,7 +70,7 @@ export class LoginPageComponent implements OnInit {
         temp_user = new User(0, this.name, '', '', '', '', '', this.password)
       }
       if(this.loginService.loginUser(temp_user)) {
-        console.log('returned true!') 
+        console.log('returned true!')
         this.router.navigate(['/user/home']);
       } else {
         console.log('returned false... login failure')
@@ -79,17 +79,17 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  // user register pieces...
-  returnedUser:String;
-  email:String;
-  username:String;
-  firstname:String;
-  lastname:String;
-  dateofbirth:String;
-  phonenumber:String;
-  registerPassword:String;
-  verifyPassword:String;
-
+  // user register values...
+  returnedUser:string;
+  email:string;
+  username:string;
+  firstname:string;
+  lastname:string;
+  dateofbirth:string;
+  phonenumber:string;
+  registerPassword:string;
+  verifyPassword:string;
+  
   showModal = false;
 
   close() {
@@ -97,6 +97,9 @@ export class LoginPageComponent implements OnInit {
   }
 
   register() {
+    // still need validation for all fields...
+
+
     var new_user = new User(1, this.username, this.email, this.firstname, this.lastname, this.dateofbirth, this.phonenumber, this.password)
     var existing_user = this.dbService.findUser(new_user)
     if (existing_user == null) {
@@ -108,19 +111,6 @@ export class LoginPageComponent implements OnInit {
       console.log('username already exists')
       console.log(this.dbService.demo_users)
     }
-    // this.userService.registerUser.subscribe(
-    //     data => {
-    //       this.returnedUser = data;
-    //       this.logger.log("Returned string? :")
-    //       this.logger.log("data: " + data);
-    //       this.logger.log("returnedUser: " + this.returnedUser);
-
-    //       if(this.returnedUser.length > 0) {
-
-    //         
-    //       }
-    //     }
-    //   );
 
       this.returnedUser = "";
       this.email = "";

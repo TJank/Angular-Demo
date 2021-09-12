@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark" >
-    <a routerLink="/" id="logo" class="navbar-left" ><img id="imgLogo" src="../../../assets/logo.png"></a>
-    <a class="navbar-brand" routerLink="/"><h1>Janky Industries</h1></a>
+    <a routerLink="/coach/home" id="logo" class="navbar-left" ><img id="imgLogo" src="../../../assets/logo.png"></a>
+    <a class="navbar-brand" routerLink="/coach/home">Janky Industries</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,16 +11,13 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="" id="about" routerLink="#"><h2>About &nbsp;</h2></a>
+          <a class="nav-link" id="contact" routerLink="#">Pending Sessions</a>
         </li>
         <li class="nav-item">
-          <a class="" id="contact" routerLink="#"><h2>Contact &nbsp;</h2></a>
+          <a class="nav-link" id="contact" routerLink="/coach/edit-profile">Edit Profile</a>
         </li>
         <li class="nav-item">
-          <a class="" id="contact" routerLink="/login"><h2>User Login &nbsp;</h2></a>
-        </li>
-        <li class="nav-item">
-          <a class="" id="contact" routerLink="/coach"><h2>Coach Login</h2></a>
+          <div (click)="logout()"><a class="nav-link" id="logout">Logout</a></div>
         </li>
       </ul>
     </div>

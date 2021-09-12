@@ -1,15 +1,15 @@
 export class User {
 
     public id:number
-    public username:String;
-    public email:String;
-    public firstname:String;
-    public lastname:String;
-    public dateofbirth:String;
-    public phonenumber:String;
-    public password:String;
+    public username:string;
+    public email:string;
+    public firstname:string;
+    public lastname:string;
+    public dateofbirth:string;
+    public phonenumber:string;
+    public password:string;
 
-    constructor(id:number, username:String, email:String, firstname:String, lastname:String, dateofbirth:String, phonenumber:String, password:String){
+    constructor(id:number, username:string, email:string, firstname:string, lastname:string, dateofbirth:string, phonenumber:string, password:string){
       this.id = id
       this.username = username
       this.email = email

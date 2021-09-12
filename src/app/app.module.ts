@@ -12,6 +12,10 @@ import { LoginCoachPageComponent } from './components/login-coach-page/login-coa
 import { LoginAdminPageComponent } from './components/login-admin-page/login-admin-page.component';
 import { LandingNavbarComponent } from './components/landing-navbar/landing-navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UserHomePageComponent } from './components/user-home-page/user-home-page.component';
+import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
+import { CoachNavbarComponent } from './components/coach-navbar/coach-navbar.component';
+import { CoachHomePageComponent } from './components/coach-home-page/coach-home-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { FooterComponent } from './components/footer/footer.component';
     LoginCoachPageComponent,
     LoginAdminPageComponent,
     LandingNavbarComponent,
-    FooterComponent
+    FooterComponent,
+    UserHomePageComponent,
+    UserNavbarComponent,
+    CoachNavbarComponent,
+    CoachHomePageComponent
   ],
   imports: [
     BrowserModule,
