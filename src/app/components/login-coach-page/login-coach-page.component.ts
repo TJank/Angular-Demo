@@ -47,7 +47,7 @@ export class LoginCoachPageComponent implements OnInit {
 
     // call login service
     if(this.errorNum == 0) {
-      var temp_coach = new Coach(0, this.email, '','','','','','','','','',this.password,'')
+      var temp_coach = new Coach(0, this.email, "", "", [], [], [], [], [], [], [], this.password,"")
       if(this.loginService.loginCoach(temp_coach)) {
         console.log('returned true!')
 

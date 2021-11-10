@@ -1,0 +1,77 @@
+<app-coach-navbar></app-coach-navbar>
+
+  <div class="container">
+        <div id="view_session">
+            <div  class="row title"><h1>View session</h1></div> <br><br>
+            <div class="col-12">
+                <form (ngSubmit)="save()" #registerForm="ngForm">
+                <div class="form-group row">
+                    <label for="date"><h2>Date: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" class="form-control" id="Date" value="{{session.date}}" name="Date" disabled></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Time"><h2>Time: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" class="form-control" id="Time" name="Time" value="{{ session.time }}:00" disabled></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Training"><h2>Training: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" class="form-control" id="Training" name="Training" value="{{ session.session_type }}" disabled></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="fname"><h2>First Name: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" class="form-control" id="fname" name="fname" value="{{ session.user_firstname }}" disabled></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lname"><h2>Last Name: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" class="form-control" id="lanme" name="lname" value="{{ session.user_lastname }}" disabled></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="num"><h2>Phone Number: </h2></label>
+                    <div class="align col-8">
+                        <h2><input type="text" class="form-control" id="num" name="num" value="{{ session.user_phonenum }}" disabled></h2>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="status"><h2>Status: </h2></label>
+                    <select id="status" name="status" 
+                            [(ngModel)]="new_status" class="form-control">
+                        <option style="display:none;" selected [value]="session.session_status">
+                                {{ session.session_status  }}
+                        </option>
+                        <option value="accepted" [hidden]="!hidden_sellect">
+                            accepted
+                        </option>
+                        <option value="declined" [hidden]="!hidden_sellect">
+                            declined
+                        </option>
+                            <option  value="completed" [hidden]="hidden_sellect">
+                            completed
+                        </option>
+                        <option value="cancelled" [hidden]="hidden_sellect">
+                            cancelled
+                        </option>
+                        
+                    </select>
+                </div>
+                <div class="container">
+                    <div class="row">
+                    <div class="col-4"></div>
+                        <button type="submit" class="col-4 btn btn-danger" ><h2>Save</h2></button>
+                    <div class="col"></div>
+                    </div>
+                </div>
+                </form>
+            </div>
+            
+        </div>
+  </div>

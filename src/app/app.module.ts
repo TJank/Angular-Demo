@@ -16,6 +16,15 @@ import { UserHomePageComponent } from './components/user-home-page/user-home-pag
 import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 import { CoachNavbarComponent } from './components/coach-navbar/coach-navbar.component';
 import { CoachHomePageComponent } from './components/coach-home-page/coach-home-page.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { CoachEditProfilePageComponent } from './components/coach-edit-profile-page/coach-edit-profile-page.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { AdminCreateCoachPageComponent } from './components/admin-create-coach-page/admin-create-coach-page.component';
+import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
+import { CoachViewSessionPageComponent } from './components/coach-view-session-page/coach-view-session-page.component';
+import { UserEditProfilePageComponent } from './components/user-edit-profile-page/user-edit-profile-page.component';
+import { UserSubmitSessionPageComponent } from './components/user-submit-session-page/user-submit-session-page.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +38,16 @@ import { CoachHomePageComponent } from './components/coach-home-page/coach-home-
     UserHomePageComponent,
     UserNavbarComponent,
     CoachNavbarComponent,
-    CoachHomePageComponent
+    CoachHomePageComponent,
+    PagenotfoundComponent,
+    CoachEditProfilePageComponent,
+    AdminNavbarComponent,
+    AdminCreateCoachPageComponent,
+    AdminHomePageComponent,
+    CoachViewSessionPageComponent,
+    UserEditProfilePageComponent,
+    UserSubmitSessionPageComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,

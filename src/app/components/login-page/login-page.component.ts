@@ -70,10 +70,10 @@ export class LoginPageComponent implements OnInit {
         temp_user = new User(0, this.name, '', '', '', '', '', this.password)
       }
       if(this.loginService.loginUser(temp_user)) {
-        console.log('returned true!')
+        console.log('success!')
         this.router.navigate(['/user/home']);
       } else {
-        console.log('returned false... login failure')
+        console.log('login failure...')
       }
 
     }
@@ -100,16 +100,13 @@ export class LoginPageComponent implements OnInit {
     // still need validation for all fields...
 
 
-    var new_user = new User(1, this.username, this.email, this.firstname, this.lastname, this.dateofbirth, this.phonenumber, this.password)
+    var new_user = new User(1, this.username, this.email, this.firstname, this.lastname, this.dateofbirth, this.phonenumber, this.registerPassword)
     var existing_user = this.dbService.findUser(new_user)
     if (existing_user == null) {
       // user name does not exist
       this.registerService.registerUser(new_user);
-      this.router.navigate(['/login']);
-      console.log(this.dbService.demo_users)
     } else {
       console.log('username already exists')
-      console.log(this.dbService.demo_users)
     }
 
       this.returnedUser = "";
@@ -121,6 +118,12 @@ export class LoginPageComponent implements OnInit {
       this.phonenumber = "";
       this.registerPassword = "";
       this.verifyPassword = "";
+
+      var tmp_user = this.dbService.findUser(new_user);
+      if(tmp_user.email === new_user.email) {
+        document.getElementById("signup").style.display = "none";
+        document.getElementById("login").style.display = "block";
+      }
   }
 
 }

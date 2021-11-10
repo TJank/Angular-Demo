@@ -1,0 +1,46 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container">
+    <h1>Edit User Profile</h1>
+    <div id="signup">
+      <form #editCoachForm="ngForm">
+        <div class="form-group">
+            <label for="firstname">First Name:</label>
+            <input type="text" class="form-control" id="firstname" [(ngModel)]="firstname" name="firstname" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input type="text" class="form-control" id="lastname" [(ngModel)]="lastname" name="lastname" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Phone Number:</label>
+            <input type="text" class="form-control" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber">
+        </div>
+        
+        <!-- <div class="form-group">
+            <label for="oldPassword">Old Password</label>
+            <input [hidden]="disabled" [(ngModel)]="oldPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="oldPassword" id="oldPassword" required>
+        </div>
+  
+        <div class="form-group">
+            <label for="newPassword">Password</label>
+            <input [hidden]="disabled" [(ngModel)]="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="newPassword" id="newPassword" required>
+        </div>
+
+        <div class="form-group">
+            <label for="verifyNewPassword">Confirm Password</label>
+            <input [hidden]="disabled" [(ngModel)]="verifyNewPassword" type="password" name="verifyNewPassword" id="verifyNewPassword" required>
+        </div> -->
+  
+        <button (click)="saveUserDetails()" class="btn btn-success">Save</button>
+      </form>
+    </div>
+</div>
+<app-footer></app-footer>

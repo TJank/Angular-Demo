@@ -1,4 +1,79 @@
 <app-user-navbar></app-user-navbar>
 
-<p> welcome user! create a session!
-</p>
+<div class="container">
+
+    <div id="pending_sessions">
+       <h2>Pending Sessions:</h2>
+        <table class="table table-striped">
+            <!-- <thead>
+                <th>{{ one_week[0] }}</th>
+                <th>{{ one_week[1] }}</th>
+                <th>{{ one_week[2] }}</th>
+                <th>{{ one_week[3] }}</th>
+                <th>{{ one_week[4] }}</th>
+                <th>{{ one_week[5] }}</th>
+                <th>{{ one_week[6] }}</th>
+            </thead> -->
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Training</th>
+                    <th scope="col">Coach Name</th>
+                    <th scope="col">Coach email</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let session of pendingSessions; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ session.date }}</td>
+                    <td>{{ session.time }}:00</td>
+                    <td>{{ session.session_type }}</td>
+                    <td>{{ session.coach_name }}</td>
+                    <td>{{ session.coach_email }}</td>
+                    <td>{{ session.session_status }}</td>
+                    <!-- <td><button (click)="loadSession(session)">View</button></td> -->
+                </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+    <div id="accepted_sessions">
+        <h2>Scheduled Sessions:</h2>
+         <table class="table table-striped">
+             <thead>
+                 <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Date</th>
+                     <th scope="col">Time</th>
+                     <th scope="col">Training</th>
+                     <th scope="col">Coach Name</th>
+                     <th scope="col">Coach email</th>
+                     <th scope="col">Status</th>
+                     <th scope="col"></th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr *ngFor="let session of acceptedSessions; index as i">
+                     <th scope="row">{{ i + 1 }}</th>
+                     <td>{{ session.date }}</td>
+                     <td>{{ session.time }}:00</td>
+                     <td>{{ session.session_type }}</td>
+                     <td>{{ session.coach_name }}</td>
+                     <td>{{ session.coach_email }}</td>
+                     <td>{{ session.session_status }}</td>
+                     <!-- <td><button (click)="loadSession(session)">View</button></td> -->
+                 </tr>
+             </tbody>
+           </table>
+ 
+     </div>
+
+</div>
+
+<app-footer></app-footer>
+

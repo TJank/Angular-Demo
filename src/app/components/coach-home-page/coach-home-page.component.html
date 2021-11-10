@@ -1,18 +1,106 @@
 <app-coach-navbar></app-coach-navbar>
 
-<p>
-    we need a calendar view showing the current week grid in which we are displaying the week's scheduled sessions!
-    it should be broken up by hour and could even be color cordinated by what is booked and what might be pending, available,
-    and hours not working.
-</p>
+<div class="container">
+    <div id="pending_sessions">
+        <h2>Pending Sessions:</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Training</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let session of pendingSessions; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ session.date }}</td>
+              <td>{{ session.time }}:00</td>
+              <td>{{ session.session_type }}</td>
+              <td>{{ session.user_firstname }}</td>
+              <td>{{ session.user_lastname }}</td>
+              <td>{{ session.user_phonenum }}</td>
+              <td>{{ session.session_status }}</td>
+              <td><button (click)="loadSession(session)">View</button></td>
+            </tr>
+            </tbody>
+          </table>
 
-<p>
-    Hour blocks will be colored accordingly: Grey for nothing (nothing scheduled & not available). Red for pending session request. 
-    Green for Accepted & Scheduled Session. Blue for Blocked by coach?
-</p>
+    </div>
 
-<p>
-    By Blocked, it means the coach is usually available at this hour but blocked it from another user creating a session for any reason.
-    Could be one client wanted to do a 5:30 - 6:30 so the coach blocked the hour 6-7 which doesn't allow another client to create a session
-    at that time. 
-</p>
+    <div id="accepted_sessions">
+        <h2>Accepted Sessions:</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Training</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+              
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let session of acceptedSessions; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ session.date }}</td>
+              <td>{{ session.time }}:00</td>
+              <td>{{ session.session_type }}</td>
+              <td>{{ session.user_firstname }}</td>
+              <td>{{ session.user_lastname }}</td>
+              <td>{{ session.user_phonenum }}</td>
+              <td>{{ session.session_status }}</td>
+              <td><button (click)="loadSession(session)">View</button></td>
+            </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+
+    <div id="completed_sessions">
+        <h2>Completed Sessions:</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Training</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let session of completedSessions; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ session.date }}</td>
+              <td>{{ session.time }}:00</td>
+              <td>{{ session.session_type }}</td>
+              <td>{{ session.user_firstname }}</td>
+              <td>{{ session.user_lastname }}</td>
+              <td>{{ session.user_phonenum }}</td>
+              <td>{{ session.session_status }}</td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+
+</div>
