@@ -171,4 +171,13 @@ export class DatabaseService {
     return rtn_user
   }
 
+  checkUniqueUsername(username:string) {
+    var flag = true;
+    this.demo_users.forEach(temp_user => {
+      if(username === temp_user.username) {
+        flag = false
+      }
+    });
+    return flag;
+  }
 }

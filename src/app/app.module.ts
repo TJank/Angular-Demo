@@ -25,6 +25,7 @@ import { CoachViewSessionPageComponent } from './components/coach-view-session-p
 import { UserEditProfilePageComponent } from './components/user-edit-profile-page/user-edit-profile-page.component';
 import { UserSubmitSessionPageComponent } from './components/user-submit-session-page/user-submit-session-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
+import { BsDatepickerModule } from 'node_modules/ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AboutPageComponent } from './components/about-page/about-page.component
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
