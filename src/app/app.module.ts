@@ -27,6 +27,7 @@ import { UserSubmitSessionPageComponent } from './components/user-submit-session
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { BsDatepickerModule } from 'node_modules/ngx-bootstrap/datepicker';
 import { AboutNavbarComponent } from './components/about-navbar/about-navbar.component';
+import { AboutDevsPageComponent } from './components/about-devs-page/about-devs-page.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AboutNavbarComponent } from './components/about-navbar/about-navbar.com
     UserEditProfilePageComponent,
     UserSubmitSessionPageComponent,
     AboutPageComponent,
-    AboutNavbarComponent
+    AboutNavbarComponent,
+    AboutDevsPageComponent
   ],
   imports: [
     BrowserModule,
