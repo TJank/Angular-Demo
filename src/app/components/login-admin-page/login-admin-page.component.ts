@@ -22,41 +22,54 @@ export class LoginAdminPageComponent implements OnInit {
   username:string;
   password:string;
 
-  success = false;
-  errorNum:number;
-  errors:string[];
+  usr_name_err:boolean = false;
+  pass_err:boolean = false;
+  not_found_err:boolean = false;
 
   adminLogin() {
-    this.errors = [];
-    this.errorNum = 0;
+    this.usr_name_err = false;
+    this.pass_err = false;
+    this.not_found_err = false;
 
     if(this.username == null) {
-      
-      this.errorNum++;
-      this.errors.push("Please specify your username.")
+      console.log("username not entered...");
+      this.usr_name_err = true;
     }
     else if (!(this.username.trim().length > 0)) {
-      this.errorNum++;
-      this.errors.push("Please specify your username.");
+      console.log("username is blank...");
+      this.usr_name_err = true;
     }
 
     // password check
     if(this.password == null) {
-      this.errorNum++;
-      this.errors.push("Please enter Password.");
+      console.log("password not entered...");
+      this.pass_err = true;
+    }
+    else if (!(this.password.trim().length > 0)) {
+      console.log("password is blank...");
+      this.pass_err = true;
     }
 
     // call login service
-    if(this.errorNum == 0) {
+    if(!this.pass_err && !this.usr_name_err) {
       var temp_admin = new Admin(0, this.username, "", "", "", this.password)
       if(this.loginService.loginAdmin(temp_admin)) {
-        console.log('returned true!')
-
         this.router.navigate(['/admin/home']);
       } else {
-        console.log('returned false... login failure')
+        this.not_found_err = true;
+        this.username = "";
+        this.password = "";
+        console.log('user not found');
       }
+    } else {
+      if(this.pass_err) {
+        this.password = "";
+      }
+      if(this.usr_name_err)
+      this.username = "";
+      this.password = "";
     }
+
   }
 
 }
