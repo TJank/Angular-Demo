@@ -21,49 +21,54 @@ export class LoginCoachPageComponent implements OnInit {
   email:string;
   password:string;
 
-  success = false;
-  errorNum:number;
-  errors:string[];
+  email_err:boolean = false;
+  pass_err:boolean = false;
+  not_found_err:boolean = false;
 
   coachLogin() {
-    this.errors = [];
-    this.errorNum = 0;
+    this.email_err = false;
+    this.pass_err = false;
+    this.not_found_err = false;
 
     if(this.email == null) {
-      
-      this.errorNum++;
-      this.errors.push("Please specify your email.")
+      console.log("username not entered...");
+      this.email_err = true;
     }
     else if (!(this.email.trim().length > 0)) {
-      this.errorNum++;
-      this.errors.push("Please specify your email.");
+      console.log("username not entered...");
+      this.email_err = true;
     }
 
     // password check
     if(this.password == null) {
-      this.errorNum++;
-      this.errors.push("Please enter Password.");
+      console.log("password not entered...");
+      this.pass_err = true;
+    } else if (!(this.password.trim().length > 0)) {
+      console.log("password is blank...");
+      this.pass_err = true;
     }
 
     // call login service
-    if(this.errorNum == 0) {
+    if(!this.pass_err && !this.email_err) {
       var temp_coach = new Coach(0, this.email, "", "", [], [], [], [], [], [], [], this.password,"")
       if(this.loginService.loginCoach(temp_coach)) {
         console.log('returned true!')
 
         this.router.navigate(['/coach/home']);
       } else {
-        console.log('returned false... login failure')
+        this.not_found_err = true;
+        this.email = "";
+        this.password = "";
+        console.log('coach not found');
       }
-      // this.authService.loginCoach({email: this.email, password: this.password})
-      // .subscribe(
-      //   data => {
-      //     if(data) {               
-      //       this.router.navigate(['/coach/home']);
-      //     }
-      //   }
-      // );
-    }
+    } else {
+      if(this.pass_err) {
+        this.password = "";
+      }
+      if(this.email_err)
+      this.email = "";
+      this.password = "";
+    } 
   }
 
 
