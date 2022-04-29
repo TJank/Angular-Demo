@@ -1,7 +1,12 @@
 .errors {
-    background-color: grey;
+    /* background-color: grey; */
     color: red;
     text-transform: capitalize;
+    text-align: center;
+}
+
+.error-msg {
+    color: red;
 }
 
 body{
