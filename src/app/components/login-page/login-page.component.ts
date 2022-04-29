@@ -37,9 +37,9 @@ export class LoginPageComponent implements OnInit {
   password:string;
   submitted = false;
 
-  success = false;
-  errorNum:number = 0;
-  errors:string[] = [];
+  user_name_err:boolean = false;
+  pass_err:boolean = false;
+  not_found_err:boolean = false;
 
   loginTransition() {
     document.getElementById("signup").style.display = "none";
@@ -52,28 +52,30 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.errors = [];
-    this.errorNum = 0;
+    this.user_name_err = false;
+    this.pass_err = false;
+    this.not_found_err = false;
 
     if(this.name == null) {
-      // this.logger.log("email is null...")
-      this.errorNum++;
-      this.errors.push("Please specify your email.")
+      console.log("username not entered...");
+      this.user_name_err = true;
     }
     else if (!(this.name.trim().length > 0)) {
-      // this.logger.log("email length is > 0...")
-      this.errorNum++;
-      this.errors.push("Please specify your email.");
+      console.log("username not entered...");
+      this.user_name_err = true;
     }
 
     // password check
     if(this.password == null) {
-      this.errorNum++;
-      this.errors.push("Please enter Password.");
+      console.log("password not entered...");
+      this.pass_err = true;
+    } else if (!(this.password.trim().length > 0)) {
+      console.log("password is blank...");
+      this.pass_err = true;
     }
 
     // call login service
-    if(this.errorNum == 0) {
+    if(!this.pass_err && !this.user_name_err) {
       var temp_user;
       if(this.name.includes('@')) {
         temp_user = new User(0, '', this.name, '', '', '', '', this.password)
@@ -84,13 +86,22 @@ export class LoginPageComponent implements OnInit {
         console.log('success!')
         this.router.navigate(['/user/home']);
       } else {
-        console.log('login failure...')
+        this.not_found_err = true;
+        this.name = "";
+        this.password = "";
+        console.log('user not found');
       }
-
+    } else {
+      this.not_found_err = true;
+      this.name = "";
+      this.password = "";
     }
   }
 
   // user register values...
+
+  errors:string[];
+  errorNum:number;
   returnedUser:string;
   email:string;
   username:string;
@@ -188,8 +199,6 @@ export class LoginPageComponent implements OnInit {
     //   // your code goes here
     // }
 
-
-    console.log(this.errors)
     if(this.errorNum === 0 && this.errors.length <=0 ) {
       window.alert("Everything works!")
       var new_user = new User(1, this.username, this.email, this.firstname, this.lastname, this.dateofbirth, this.phonenumber, this.registerPassword)

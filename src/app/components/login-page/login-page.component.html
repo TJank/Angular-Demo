@@ -22,6 +22,9 @@
             <div class="title row"><h1>Login</h1></div> <br><br>
             <div class="col-12">
                 <form (ngSubmit)="login()" #loginForm="ngForm">
+                    <div [hidden]="!not_found_err" class="form-group row errors">
+                        <label class="error-msg">Email/Username or Passowrd Incorrect</label>
+                    </div>
                     <div class="form-group row">
                         <label class="col-form-control" for="name"><h2> Email/Username: </h2></label>
                         <div class="align col-7">
