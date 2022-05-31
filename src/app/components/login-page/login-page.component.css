@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.row {
+    padding-bottom: 15px;
+}
+
 .error-msg {
     color: red;
 }
