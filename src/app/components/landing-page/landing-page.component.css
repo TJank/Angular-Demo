@@ -3,6 +3,12 @@ video {
     width: 100%;
     padding-bottom: 2px;
 }
+
+#bod {
+    width: 100vw;
+    height: 100vh;
+}
+
 button {
     border-radius: 100%;
     float: left;
@@ -33,7 +39,7 @@ h1{
 }
 
 #video{
-   animation: fadeIn 2s;
+    animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
@@ -110,14 +116,12 @@ h1{
 
 @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
-      animation-delay: -1ms !important;
-      animation-duration: 1ms !important;
-      animation-iteration-count: 1 !important;
-      background-attachment: initial !important;
-      scroll-behavior: auto !important;
-      transition-duration: 0s !important;
-      transition-delay: 0s !important;
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
     }
 }
-
-    
