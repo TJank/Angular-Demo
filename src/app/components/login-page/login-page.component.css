@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 body{height: 200%;}
 .errors {
-    background-color: grey;
+    /* background-color: grey; */
     color: red;
     text-transform: capitalize;
+    text-align: center;
+}
+
+.row {
+    padding-bottom: 15px;
+}
+
+.error-msg {
+    color: red;
 }
 #page-footer{
     position: sticky;

@@ -37,9 +37,9 @@ export class LoginPageComponent implements OnInit {
   password:string;
   submitted = false;
 
-  success = false;
-  errorNum:number = 0;
-  errors:string[] = [];
+  user_name_err:boolean = false;
+  pass_err:boolean = false;
+  not_found_err:boolean = false;
 
   
   loginTransition() {
@@ -61,28 +61,30 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.errors = [];
-    this.errorNum = 0;
+    this.user_name_err = false;
+    this.pass_err = false;
+    this.not_found_err = false;
 
     if(this.name == null) {
-      // this.logger.log("email is null...")
-      this.errorNum++;
-      this.errors.push("Please specify your email.")
+      console.log("username not entered...");
+      this.user_name_err = true;
     }
     else if (!(this.name.trim().length > 0)) {
-      // this.logger.log("email length is > 0...")
-      this.errorNum++;
-      this.errors.push("Please specify your email.");
+      console.log("username not entered...");
+      this.user_name_err = true;
     }
 
     // password check
     if(this.password == null) {
-      this.errorNum++;
-      this.errors.push("Please enter Password.");
+      console.log("password not entered...");
+      this.pass_err = true;
+    } else if (!(this.password.trim().length > 0)) {
+      console.log("password is blank...");
+      this.pass_err = true;
     }
 
     // call login service
-    if(this.errorNum == 0) {
+    if(!this.pass_err && !this.user_name_err) {
       var temp_user;
       if(this.name.includes('@')) {
         temp_user = new User(0, '', this.name, '', '', '', '', this.password)
@@ -93,9 +95,15 @@ export class LoginPageComponent implements OnInit {
         console.log('success!')
         this.router.navigate(['/user/home']);
       } else {
-        console.log('login failure...')
+        this.not_found_err = true;
+        this.name = "";
+        this.password = "";
+        console.log('user not found');
       }
-
+    } else {
+      this.not_found_err = true;
+      this.name = "";
+      this.password = "";
     }
   }
 
@@ -109,6 +117,17 @@ export class LoginPageComponent implements OnInit {
   phonenumber:string;
   registerPassword:string;
   verifyPassword:string;
+
+  // user register errors:
+  email_err:boolean = false;
+  not_unique_err:boolean = false;
+  usr_name_err:boolean = false;
+  first_n_err:boolean = false;
+  last_n_err:boolean = false;
+  phone_format_err:boolean = false;
+  phone_err:boolean = false;
+  reg_pass_err:boolean = false;
+  verify_pass_err:boolean = false;
   
   showModal = false;
 
@@ -117,72 +136,75 @@ export class LoginPageComponent implements OnInit {
   }
 
   register() {
-    // dateofbirth:string;
-    // registerPassword:string;
-    // verifyPassword:string;
+    this.email = this.email.trim();
+    this.username = this.username.trim();
+    this.firstname = this.firstname.trim();
+    this.lastname = this.lastname.trim();
+    this.registerPassword = this.registerPassword.trim();
+    this.verifyPassword = this.verifyPassword.trim();
+
+    this.email_err = false;
+    this.not_unique_err = false;
+    this.usr_name_err = false;
+    this.first_n_err = false;
+    this.last_n_err = false;
+    this.phone_format_err = false;
+    this.phone_err = false;
+    this.reg_pass_err = false;
+    this.verify_pass_err = false;
 
     // email validation
     if(this.email === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter Email Address");
+      this.email_err = true
     } else {
       if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) {
-        this.errorNum++;
-        this.errors.push("Invalid Email Address");
+        this.email_err = true
       }
     }
 
     // username validation
     if(this.username === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter Username");
+      this.usr_name_err = true;
     } else {
       if (!(this.checkUniqueUsername(this.username))) {
-        this.errorNum++;
-        this.errors.push("Username Not Available");
+        this.not_unique_err = true;
+        this.usr_name_err = false;
       } 
     }
 
     // first name validation
     if(this.firstname === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter First Name");
+      this.first_n_err = true;
     }
     // last name validation
     if(this.lastname === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter Last Name");
+      this.last_n_err = true;
     }
 
     // phone number validation
     if(this.phonenumber === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter Phone Number");
+      this.phone_err = true;
+      this.phone_format_err = false
     } else {
       if (!(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.\,]?[0-9]{3}[-\s\.\,]?[0-9]{4,6}$/.test(this.phonenumber))) {
-        this.errorNum++;
-        this.errors.push("Invalid Phone Number");
-        window.alert("invalid phone number")
+        this.phone_format_err = true
+        this.phone_err = false
       }
     }
 
-
     // password validation
     if(this.registerPassword === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter Password");
+      this.reg_pass_err = true
     }
 
     if(this.verifyPassword === undefined) {
-      this.errorNum++;
-      this.errors.push("Must Enter Verification Password");
+      this.verify_pass_err = true
     }
 
     if(this.registerPassword != undefined
       && this.verifyPassword != undefined) {
         if(this.registerPassword !== this.verifyPassword) {
-          this.errorNum++;
-          this.errors.push("Passwords Don't Match");
+          this.verify_pass_err = true
         }
     }
 
@@ -197,9 +219,8 @@ export class LoginPageComponent implements OnInit {
     //   // your code goes here
     // }
 
-
-    console.log(this.errors)
-    if(this.errorNum === 0 && this.errors.length <=0 ) {
+    if(!this.email_err && !this.user_name_err && !this.not_unique_err && !this.first_n_err && !this.last_n_err
+        && !this.phone_err && !this.phone_format_err && !this.reg_pass_err && !this.verify_pass_err) {
       window.alert("Everything works!")
       var new_user = new User(1, this.username, this.email, this.firstname, this.lastname, this.dateofbirth, this.phonenumber, this.registerPassword)
       var existing_user = this.dbService.findUser(new_user)
@@ -222,8 +243,7 @@ export class LoginPageComponent implements OnInit {
 
       var tmp_user = this.dbService.findUser(new_user);
       if(tmp_user.email === new_user.email) {
-        document.getElementById("signup").style.display = "none";
-        document.getElementById("login").style.display = "block";
+        this.loginTransition()
       }
     }
   }

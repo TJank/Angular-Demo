@@ -51,3 +51,11 @@ input{font-family: 'Do Hyeon', sans-serif;}
     }
 }
 
+.error-msg {
+    color: red;
+}
+
+#bod {
+    width: 100vw;
+    height: 100vh;
+}

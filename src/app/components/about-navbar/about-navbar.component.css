@@ -1,0 +1,28 @@
+nav {
+    background-image: linear-gradient(to top right, darkred,red);
+}
+.navbar-brand {
+    padding-left: 10px;
+}
+
+h1 {
+    font-family: 'Special Elite', sans-serif;
+    font-size: x-large;
+}
+h2 {
+    font-family: 'Special Elite', sans-serif;
+    font-size: medium;
+}
+
+a {color: white;}
+a:hover {
+    text-decoration: none;
+    color: darkred;
+}
+
+#imgLogo{
+    width: 45px;
+    height: 45px;
+    padding-right: 5px;
+    align-content: center;
+}

@@ -1,23 +1,22 @@
 <app-landing-navbar></app-landing-navbar>
-
-<div class="container-fluid">
-  <div id="login">
-    <h1>Coach Login</h1>
-    <form (ngSubmit)="coachLogin()" #coachForm="ngForm">
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email/Username" required>
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="password" required>
-      </div>
-      <br>
-      <div class="sub"><button type="submit" class="btn" >Login</button></div>
-    </form>
+<div class="container-fluid" id="bod">
+    <div id="login">
+      <h1>Coach Login</h1>
+      <form (ngSubmit)="coachLogin()" #coachForm="ngForm">
+        <div class="form-group">
+          <label class="error-msg" [hidden]="!not_found_err">Coach Email or Passowrd Incorrect</label>
+          <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+          <label class="error-msg" [hidden]="!email_err" for="username">Please Enter A Username</label>
+        </div>
+  
+        <div class="form-group">
+          <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+          <label class="error-msg" [hidden]="!pass_err" for="password">Please Enter A Password</label>
+        </div>
+  
+        <button type="submit" class="btn btn-success" >Login</button>
+      </form>
   </div>
 </div>
-
 
 <div id="page-footer"><app-footer></app-footer></div>
