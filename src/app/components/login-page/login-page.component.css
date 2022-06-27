@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-body{height: 200%;}
 .errors {
     /* background-color: grey; */
     color: red;
@@ -14,21 +12,18 @@ body{height: 200%;}
 .error-msg {
     color: red;
 }
-#page-footer{
-    position: sticky;
-    top: 100vh;
-    width: 100%;
+
+body{
+    background-image: linear-gradient(to top right,rgba(0, 0, 0, .15), rgba(0, 0, 0, .15)),url(/assets/gloves2.jpg);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;  
+    padding-bottom: 3.5%;
 }
-.btn-group{
-    margin-top: -35px;
-    width: 65%;
-}
-.dob{
-    padding: 5.5px;
-    border-radius: 6px;
-}
+
 #header {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'Special Elite', sans-serif;
     text-shadow: 
         .05em 0 0 red,
         -.025em -.05em 0 green,
@@ -40,67 +35,42 @@ body{height: 200%;}
     animation: glitch 525ms infinite;
     animation-duration: 5s;
 }
-.container-fluid{
-    position: relative;
-    width: 100%;
-    text-align: justify;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+h1 {
+    font-family: 'Special Elite', sans-serif;
+    font-size: 52px;
+    color: white;
 }
 
-#login, #signup{
-    width: 40%;
-    margin-top: 30px;
-}
-#loginBTN,#signupBTN{
-    z-index: 1;
-    width: 50%;
+h2 {
+    font-family: 'Special Elite', sans-serif;
     font-size: x-large;
-    transition: .75s;
-}
-#loginBTN:hover,#signupBTN:hover{
-    transition: .75s;
-    background-color: transparent;
-    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(252,2,2,.7))
-}
-#signupBTN{
-    background-color: darkred;
-    border: darkred;
-}
-.dob{width: 100%;}
-label, .dob,.col-sm-6 {padding-left: 0;}
-h1,label {
-    font-family: 'Do Hyeon', sans-serif;
     color: white;
 }
-input{font-family: 'Do Hyeon', sans-serif;}
+
+h3 {
+    font-family: 'Big Shoulders Stencil Text', sans-serif;
+    padding-top: 0px;
+    padding-left: 15px;
+    font-size: medium;
+    color: white;
+}
+
 .btn {
-    margin-left: auto; margin-right: auto;
-    color: white;
-    font-family: 'Do Hyeon', sans-serif;
     border-color: red;
     background-color: red;
-    transition: .75s;
     padding: 5px;
+    padding-bottom: 0px;
 }
-.btn:hover{
-    background-color: darkred;
-    border: darkred;
-    transition: .75s;
-    color:white;
+.btn:hover {
+    border-color: darkred;
+    background-color:darkred;
 }
-.btn:active{background-color: black;}
-.btn:focus{
-    outline: none;
-    box-shadow: none;
-    border: none;
+
+.align {
+    position: absolute;
+    left: 250px
 }
-.sub{
-    display: flex;
-    justify-content: center;
-}
-.sub button {width: 50%;}
 
 .hide {display: none;}
 
@@ -111,9 +81,12 @@ input{font-family: 'Do Hyeon', sans-serif;}
     left: 0;
 }
 
-.slide{
-    display: block;
-    animation: slideIn 1.5s;
+.title {
+    border-bottom : 1px solid white;
+}
+
+#login {
+    animation: slideIn 1.75s;
 }
 
 @keyframes slideIn{
@@ -171,39 +144,6 @@ input{font-family: 'Do Hyeon', sans-serif;}
         .75em -.1em 0 red,
         -.25em 0 0 green,
         0 .5em 0 blue;  
-    }
-}
-
-/* @media screen and (max-width:992px){
-    #page-footer{
-       position: fixed;
-       bottom: 0;
-    }
-    #login{
-        width: 50%;
-        margin-top: 20%;
-    }    
-}
-@media screen and (max-width:768px){
-    #page-footer{
-       position: fixed;
-       bottom: 0;
-    }
-    #login{
-        width: 50%;
-        margin-top: 20%;
-    }
-    #signup{padding-bottom: 75px;}
-} */
-@media screen and (max-width:450px){
-    label, .dob,.col-sm-6 {padding-left: 0; padding-right: 0;}
-    /* #page-footer{
-        position: relative;
-        bottom: 0;
-    } */
-    #login, #signup{
-        width: 75%;
-        margin-top: 30px;
     }
 }
 

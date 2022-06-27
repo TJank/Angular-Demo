@@ -20,8 +20,8 @@ export class CoachEditProfilePageComponent implements OnInit {
     private router:Router
   ) {}
 
-  
   ngOnInit(): void {
+
     if (!this.loginService.isLoggedIn()) {
       this.router.navigateByUrl("/login");
     } else {
@@ -251,8 +251,4 @@ export class CoachEditProfilePageComponent implements OnInit {
       this.renderer.addClass(event.target, "active");
     }
   }
-
-  
-
-  
 }
