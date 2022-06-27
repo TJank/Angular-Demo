@@ -1,16 +1,14 @@
-nav {
-    background-image: linear-gradient(to top right, darkred,red);
-}
-.navbar-brand {
-    padding-left: 10px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+nav {background-image: linear-gradient(to top right, darkred,red);}
+.navbar-brand {padding-left: 10px;}
 
 h1 {
-    font-family: 'Special Elite', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     font-size: x-large;
 }
 h2 {
-    font-family: 'Special Elite', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     font-size: medium;
 }
 
@@ -25,4 +23,13 @@ a:hover {
     height: 45px;
     padding-right: 5px;
     align-content: center;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+}
+button:focus {
+    box-shadow: none;
+    background-color: darkred;
 }

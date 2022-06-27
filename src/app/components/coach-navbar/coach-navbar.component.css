@@ -1,17 +1,57 @@
-nav {
-    background-image: linear-gradient(to top right, darkred,red);
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+nav {background-image: linear-gradient(to top right, darkred,red);}
+.navbar-brand {padding-left: 10px;}
+
+h1 {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: x-large;
 }
-.navbar-brand {
-    padding-left: 10px;
+h2 {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: medium;
+    color: white;
 }
 
+a {color: white;}
+a:hover {
+    text-decoration: none;
+    color: darkred;
+}
+.row{text-align: center; margin: 0; width: 100%;}
 #imgLogo{
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     padding-right: 5px;
     align-content: center;
 }
+button {
+    box-shadow: none;
+    border: none;
+}
+button:focus {
+    box-shadow: none;
+    background-color: darkred;
+}
+#navbarContent ul li{
+    text-align: center;
+    width: 85px;
+    flex-wrap: nowrap;
+}
 
-.navbar {
-    font-family: BananaYeti;
+.col-md-9{
+    text-align: right;
+}
+
+@media screen and (max-width: 992px){
+    .col-md-9{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .col{text-align: end;}
+    #navbarContent ul li{
+        text-align: left;
+    }
 }

@@ -48,7 +48,7 @@ import { BsDatepickerModule } from 'node_modules/ngx-bootstrap/datepicker';
     CoachViewSessionPageComponent,
     UserEditProfilePageComponent,
     UserSubmitSessionPageComponent,
-    AboutPageComponent
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
