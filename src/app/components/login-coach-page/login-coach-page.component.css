@@ -1,3 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+.container-fluid{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login{width: 35%;}
+.sub{
+    display: flex;
+   justify-content: center;
+}
+.btn{
+    margin-left: auto; margin-right: auto;
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+    background-color: red;
+    width: 50%;
+    transition: .75s;
+}
+.btn:hover{
+    background-color: darkred;
+    transition: .75s;
+    color:white;
+}
+.btn:active{background-color: black;}
+.btn:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+} 
+h1,label{
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+}
+input{font-family: 'Do Hyeon', sans-serif;}
+#page-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width:450px){
+    label, .dob,.col-sm-6 {padding-left: 0; padding-right: 0;}
+   
+    #login{
+        width: 75%;
+    }
+}
+
 .error-msg {
     color: red;
 }

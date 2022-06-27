@@ -41,14 +41,23 @@ export class LoginPageComponent implements OnInit {
   pass_err:boolean = false;
   not_found_err:boolean = false;
 
+  
   loginTransition() {
-    document.getElementById("signup").style.display = "none";
-    document.getElementById("login").style.display = "block";
+    document.getElementById("signup").classList.add("hide");
+    document.getElementById("login").classList.add("slide");
+
+    document.getElementById("signup").classList.remove("slide");
+    document.getElementById("login").classList.remove("hide");
   }
 
   signupTransition() {
-    document.getElementById("signup").style.display = "block";
-    document.getElementById("login").style.display = "none";
+    document.getElementById("signup").classList.add("slide");
+    document.getElementById("login").classList.add("hide");
+
+    document.getElementById("signup").classList.remove("hide");
+    document.getElementById("login").classList.remove("slide");
+
+    // document.getElementById("page-footer")
   }
 
   login() {

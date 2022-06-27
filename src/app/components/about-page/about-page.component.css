@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+.container-fluid {
+    width: 92.5%;
+    text-align: justify;
+}
+
+h1,h2{color: rgba(252, 2, 2, .9);}
+p,h1,h2,li{font-family: 'Do Hyeon', sans-serif;}
+.intro{
+    background-image: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
+    color: white;
+    border-radius: 8px;
+    padding: 12.5px;
+}
+.img-fluid{
+    border-radius: 8px;
+    padding: 0 15px 0 0;
+}
+.admin, .user{
+    border-radius: 8px;
+    padding: 12.5px;
+    color: white;
+    margin-right: 22.5%;
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.5))
+}
+.coach{
+    border-radius: 8px;
+    padding: 12.5px;
+    color: white;
+    margin-right: 22.5%;
+    background-image: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75))
+}
+.robert, .tyler{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12.5px;
+    color: white;
+    font-size: large;
+}
+.content-bg {
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, .75),rgba(0,0,0,.85) 75%);
+    border-radius: 8px;
+}
+@media screen and (max-width: 992px) {
+    .img-fluid{padding: 0 0 15px 0;}
+}
+@media screen and (max-width: 820px) {
+    .intro h1, .usertypes h2{text-align: center;}
+    .coach,.admin,.user{margin-right: 0;}
+}
+@media screen and (max-width: 450px) {
+    .intro h1, .usertypes h2{text-align: center;}
+    .coach,.admin,.user{margin-right: 0;}
+}

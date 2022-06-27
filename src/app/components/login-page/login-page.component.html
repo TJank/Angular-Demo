@@ -1,23 +1,33 @@
 <app-landing-navbar></app-landing-navbar>
-
-<body>
     <header>
-        
         <h1 id="header" class="glitch text-center"> Welcome To Janky Robotics Co. Training!</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4 btn-group" role="group" aria-label="Basic example">
-                    <button type="button" (click)="loginTransition()" class="btn btn-danger">
-                        <h2>Login</h2>
-                    </button>
-                    <button type="button" (click)="signupTransition()" class="btn btn-danger"><h2>Sign Up</h2></button>
-                </div>
-                <div class="col-3"></div>
+        <div class="container-fluid">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button id="loginBTN" type="button" (click)="loginTransition()" class="btn">
+                    Login
+                </button>
+                <button id="signupBTN" type="button" (click)="signupTransition()" class="btn">Sign Up</button>
             </div>
         </div>
     </header> <br>
-    <div class="container">
+    <div class="container-fluid">
+        <div id="login" class="slide">
+            <h1>Login</h1>
+            <form (ngSubmit)="login()" #loginForm="ngForm">
+                <div class="form-group row">
+                    <label for="name"> Email/Username: </label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Email/Username" required>
+                </div> 
+                <div class="form-group row">
+                    <label for="password"> Password: </label>
+                     <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Password" required> 
+                </div>
+                <br>
+                <div class="sub"><button type="submit" class="btn">Login</button></div>
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid">
         <div id="login" style="padding-bottom: 30px;">
             <div class="title row"><h1>Login</h1></div> <br><br>
             <div class="col-12">
@@ -49,7 +59,6 @@
             </div>
         </div>
     </div>
-    
     <div id="signup" class="hide container">
         <div id="signup">
             <div  class="row title"><h1>Sign Up</h1></div> <br><br>
@@ -112,21 +121,28 @@
                         <label class="error-msg" [hidden]="!verify_pass_err" for="verifyPassword">Passwords Must Match</label>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                    <div class="col-4"></div>
-                        <button type="submit" class="col-4 btn btn-danger" (click)="showModal=true" data-toggle="modal"><h2>Sign Up</h2></button>
-                    <div class="col"></div>
-                    </div>
+                <div class="col-sm-6" style="padding-right: 0">
+                    <label for="phonenumber">Phone Number: </label>
+                    <input placeholder="XXX-XXX-XXXX" pattern="[1-9]{1}[0-9]{11}" type="tel" class="form-control" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber" required>   
                 </div>
-                </form>
+                
             </div>
-            
+            <div class="form-group row">
+                
+            </div>             
+            <div class="form-group row">
+                <label for="registerPassword">Password: </label>
+                <input placeholder="Password" class="form-control" [(ngModel)]="registerPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="registerPassword" id="registerPassword" required>
+            </div>
+            <div class="form-group row">
+                <label for="verifyPassword">Verify Password:</label>
+                <input placeholder="Verify Password" class="form-control" [(ngModel)]="verifyPassword" type="password" name="verifyPassword" id="verifyPassword" required>
+            </div>
+            <div class="sub"><button type="submit" class="btn" (click)="showModal=true" data-toggle="modal">Sign Up</button></div>
+            </form>
         </div>
     </div>
-    
-</body>
+    <br><br><br>
 
+<div id="page-footer"><app-footer></app-footer></div>
 
-
-<app-footer></app-footer>
