@@ -127,13 +127,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   register() {
-    this.email = this.email.trim();
-    this.username = this.username.trim();
-    this.firstname = this.firstname.trim();
-    this.lastname = this.lastname.trim();
-    this.registerPassword = this.registerPassword.trim();
-    this.verifyPassword = this.verifyPassword.trim();
-
     this.email_err = false;
     this.not_unique_err = false;
     this.usr_name_err = false;
@@ -148,6 +141,7 @@ export class LoginPageComponent implements OnInit {
     if(this.email === undefined) {
       this.email_err = true
     } else {
+      this.email = this.email.trim();
       if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))) {
         this.email_err = true
       }
@@ -157,6 +151,7 @@ export class LoginPageComponent implements OnInit {
     if(this.username === undefined) {
       this.usr_name_err = true;
     } else {
+      this.username = this.username.trim();
       if (!(this.checkUniqueUsername(this.username))) {
         this.not_unique_err = true;
         this.usr_name_err = false;
@@ -166,10 +161,14 @@ export class LoginPageComponent implements OnInit {
     // first name validation
     if(this.firstname === undefined) {
       this.first_n_err = true;
+    } else {
+      this.firstname = this.firstname.trim();
     }
     // last name validation
     if(this.lastname === undefined) {
       this.last_n_err = true;
+    } else {
+      this.lastname = this.lastname.trim();
     }
 
     // phone number validation
@@ -186,10 +185,14 @@ export class LoginPageComponent implements OnInit {
     // password validation
     if(this.registerPassword === undefined) {
       this.reg_pass_err = true
+    } else {
+      this.registerPassword = this.registerPassword.trim();
     }
 
     if(this.verifyPassword === undefined) {
       this.verify_pass_err = true
+    } else {
+      this.verifyPassword = this.verifyPassword.trim();
     }
 
     if(this.registerPassword != undefined
@@ -198,17 +201,6 @@ export class LoginPageComponent implements OnInit {
           this.verify_pass_err = true
         }
     }
-
-    // DOB Validation...
-    // var temp_date = new Date();
-    // var to = temp_date.getTime()
-    // var from = temp_date // gives 1486492200000
-    // from.setFullYear(temp_date.getFullYear() - 100);
-
-    // console.log("dob = " + this.dateofbirth)
-    // if(this.dateofbirth >= from && today <= to) {
-    //   // your code goes here
-    // }
 
     if(!this.email_err && !this.user_name_err && !this.not_unique_err && !this.first_n_err && !this.last_n_err
         && !this.phone_err && !this.phone_format_err && !this.reg_pass_err && !this.verify_pass_err) {
