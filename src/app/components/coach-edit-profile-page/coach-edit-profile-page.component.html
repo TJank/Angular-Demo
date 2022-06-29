@@ -1,11 +1,11 @@
 <app-coach-navbar></app-coach-navbar>
 
-<div class="container">
+<div class="container-fluid"> 
     <h1>Edit Profile</h1>
-    <button (click)="editForm()" type="button" class="btn btn-success">Edit</button>
+    <div style="display:flex; justify-content:flex-end"><button (click)="editForm()" type="button" class="btn edit">Edit</button></div>
+    <br><br>
     <div id="signup">
       <form #editCoachForm="ngForm">
-
         <div class="form-group">
             <label for="firstname">First Name:</label>
             <input [disabled]="disabled" type="text" class="form-control" id="firstname" [(ngModel)]="firstname" name="firstname" required>
@@ -30,7 +30,6 @@
                 </option>
             </select>
         </div>
-
         <!-- <div class="form-group">
             <label [hidden]="hidden" for="oldPassword">Old Password</label>
             <input [hidden]="disabled" [(ngModel)]="oldPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="oldPassword" id="oldPassword" required>
@@ -40,35 +39,33 @@
             <label [hidden]="hidden" for="newPassword">Password</label>
             <input [hidden]="disabled" [(ngModel)]="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="newPassword" id="newPassword" required>
         </div>
-
         <div class="form-group">
             <label [hidden]="hidden" for="verifyNewPassword">Confirm Password</label>
             <input [hidden]="disabled" [(ngModel)]="verifyNewPassword" type="password" name="verifyNewPassword" id="verifyNewPassword" required>
         </div> -->
   
-        <button [hidden]="hidden" [disabled]="disabled" (click)="saveCoachDetails()" class="btn btn-success">Save</button>
+        <div><button [hidden]="hidden" [disabled]="disabled" (click)="saveCoachDetails()" class="btn save">Save</button></div>
       </form>
-    </div>
-
+    </div> <br><br>
+    <button (click)="saveAvailability()" class="btn">Save Availability</button> <br><br>   
     <div id="availabilityPicker">
-
-        <button (click)="saveAvailability()" class="btn btn-success">Save Availability</button>
-
         <div id="sunday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSunday" aria-expanded="false" aria-controls="collapseSunday">
-                  Sunday Availability
-                </button>
-            </p>
-            <div class="collapse" id="collapseSunday" *ngIf="isLoaded">
+            <input id="sunBTN" type="radio" name="radio" checked="checked"><label class="weekday" for="sunBTN">Sunday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+              
+            <div class="collapseTable">
                 <div class="card card-body">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sunday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
-                                <td (click)="switchAvail($event)" id="{{ 'sun_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('sun', id[k]) ? 'active' : ''" >
+                                <td (click)="switchAvail($event)" id="{{ 'sun_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('sun', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -77,22 +74,23 @@
         </div> <!-- END SUNDAY AVAILABILITY-->
 
         <div id="monday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMonday" aria-expanded="false" aria-controls="collapseMonday">
-                  Monday Availability
-                </button>
-            </p>
-            <div class="collapse" id="collapseMonday" *ngIf="isLoaded">
+            <input id="monBTN" type="radio" name="radio"><label class="weekday" for="monBTN">Monday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+             
+            <div class="collapseTable">
                 <div class="card card-body">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Monday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
                                 <td (click)="switchAvail($event)" id="{{ 'mon_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('mon', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
@@ -100,68 +98,71 @@
         </div> <!-- END MONDAY AVAILABILITY -->
 
         <div id="tuesday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTuesday" aria-expanded="false" aria-controls="collapseTuesday">
-                  Tuesday Availability
-                </button>
-              </p>
-              <div class="collapse" id="collapseTuesday" *ngIf="isLoaded">
+            <input id="tueBTN" type="radio" name="radio"><label class="weekday" for="tueBTN">Tuesday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+             
+            <div class="collapseTable">
                 <div class="card card-body">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tuesday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
                                 <td (click)="switchAvail($event)" id="{{ 'tue_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('tue', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
-              </div>
+            </div>
         </div> <!-- END TUESDAY AVAILABILITY -->
 
         <div id="wednesday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday">
-                  Wednesday Availability
-                </button>
-              </p>
-              <div class="collapse" id="collapseWednesday" *ngIf="isLoaded">
+            <input id="wedBTN" type="radio" name="radio"><label class="weekday" for="wedBTN">Wednesday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+             
+            <div class="collapseTable">
                 <div class="card card-body">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Wednesday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
                                 <td (click)="switchAvail($event)" id="{{ 'wed_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('wed', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
-              </div>
+            </div>
         </div> <!-- END WEDNESDAY AVAILABILITY -->
 
-        <div id="tursday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseThursday" aria-expanded="false" aria-controls="collapseThursday">
-                  Thursday Availability
-                </button>
-            </p>
-            <div class="collapse" id="collapseThursday" *ngIf="isLoaded">
+        <div id="thursday">
+            <input id="thuBTN" type="radio" name="radio"><label class="weekday" for="thuBTN">Thursday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+             
+            <div class="collapseTable">
                 <div class="card card-body">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Thursday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
                                 <td (click)="switchAvail($event)" id="{{ 'thu_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('thu', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
@@ -169,22 +170,23 @@
         </div> <!-- END THURSDAY AVAILABILITY-->
 
         <div id="friday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFriday" aria-expanded="false" aria-controls="collapseFriday">
-                  Friday Availability
-                </button>
-            </p>
-            <div class="collapse" id="collapseFriday" *ngIf="isLoaded">
-                <div class="card card-body">
+            <input id="friBTN" type="radio" name="radio"><label class="weekday" for="friBTN">Friday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+             
+            <div class="collapseTable">
+                <div class="card card-body"> 
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Friday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
                                 <td (click)="switchAvail($event)" id="{{ 'fri_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('fri', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
@@ -192,30 +194,28 @@
         </div> <!-- END FRIDAY AVAILABILITY-->
 
         <div id="saturday">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSaturday" aria-expanded="false" aria-controls="collapseSaturday">
-                  Saturday Availability
-                </button>
-            </p>
-            <div class="collapse" id="collapseSaturday" *ngIf="isLoaded">
+            <input id="satBTN" type="radio" name="radio"><label class="weekday" for="satBTN">Saturday Availability</label>
+                <!-- data-toggle="collapse" data-target="#collapseWednesday" aria-expanded="false" aria-controls="collapseWednesday"> -->
+             
+            <div class="collapseTable">
                 <div class="card card-body">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Saturday</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr *ngFor="let id of top; index as i;">
                                 <td (click)="switchAvail($event)" id="{{ 'sat_' + id[k] }}" *ngFor="let time of standard[i]; index as k;" [ngClass]="haystack('sat', id[k]) ? 'active' : ''">
                                     {{ standard[i][k] }}
                                 </td>
-
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div>
             </div>
         </div> <!-- END SATURDAY AVAILABILITY -->
-
-
     </div> <!-- END AVAILABILITY PICKER -->
-
 </div>
-<app-footer></app-footer>
+<div id="page-footer"><app-footer></app-footer></div>

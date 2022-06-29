@@ -1,12 +1,13 @@
 <app-landing-navbar></app-landing-navbar>
 
-<div class="container" id="bod">
+<div class="container-fluid">
     <div id="login">
       <h1>Coach Login</h1>
       <form (ngSubmit)="coachLogin()" #coachForm="ngForm">
         <div class="form-group">
           <label class="error-msg" [hidden]="!not_found_err">Coach Email or Passowrd Incorrect</label>
           <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+          
           <label class="error-msg" [hidden]="!email_err" for="username">Please Enter A Username</label>
         </div>
   
@@ -20,4 +21,4 @@
   </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer id="page-footer"></app-footer>

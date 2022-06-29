@@ -1,8 +1,8 @@
 <app-user-navbar></app-user-navbar>
 
-<div class="container">
-    <h1>Edit User Profile</h1>
-    <div id="signup">
+<div class="container-fluid"> 
+    <div id="edit">
+        <h1>Edit User Profile</h1>
       <form #editCoachForm="ngForm">
         <div class="form-group">
             <label for="firstname">First Name:</label>
@@ -33,7 +33,6 @@
             <label for="newPassword">Password</label>
             <input [hidden]="disabled" [(ngModel)]="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="newPassword" id="newPassword" required>
         </div>
-
         <div class="form-group">
             <label for="verifyNewPassword">Confirm Password</label>
             <input [hidden]="disabled" [(ngModel)]="verifyNewPassword" type="password" name="verifyNewPassword" id="verifyNewPassword" required>
@@ -43,4 +42,4 @@
       </form>
     </div>
 </div>
-<app-footer></app-footer>
+<div id="page-footer"><app-footer></app-footer></div>
