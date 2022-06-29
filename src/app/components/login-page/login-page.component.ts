@@ -204,7 +204,6 @@ export class LoginPageComponent implements OnInit {
 
     if(!this.email_err && !this.user_name_err && !this.not_unique_err && !this.first_n_err && !this.last_n_err
         && !this.phone_err && !this.phone_format_err && !this.reg_pass_err && !this.verify_pass_err) {
-      window.alert("Everything works!")
       var new_user = new User(1, this.username, this.email, this.firstname, this.lastname, this.dateofbirth, this.phonenumber, this.registerPassword)
       var existing_user = this.dbService.findUser(new_user)
       if (existing_user == null) {
