@@ -3,18 +3,18 @@ import { Session } from 'src/app/classes/session/session';
 import { Admin } from 'src/app/classes/admin/admin';
 import { Coach } from 'src/app/classes/coach/coach';
 import { User } from 'src/app/classes/user/user';
+import { CoachService } from '../coach-data/coach.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
 
-  constructor() {}
+  constructor(private coachService:CoachService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  demo_coachTypes:String[] = ["Yoga", "Boxing", "Lifting", "Nutrition"]
+  demo_coachTypes:string[] = ["Yoga", "Boxing", "Lifting", "Nutrition"]
   demo_users:User[] = [
     new User(1, 'fullHouse', 'bobsaget@gmail.com', 'Bob','Saget', '05/17/1956', '(123)456-7890', 'bobsaget'), 
     new User(2, 'demo', 'demo@gmail.com', 'Demo','User', '01/01/2000', '(123)456-7890', 'demouser')
@@ -42,6 +42,65 @@ export class DatabaseService {
   demo_admins:Admin[] = [
     new Admin(1, "admin", "admin@gmail.com", "Admin", "Test", "demoadmin")
   ];
+
+  // generateDemoUserSessions() {
+  //   var username = "demo"
+  //   var firstname = "Demo"
+  //   var lastname = "User"
+  //   var phone = "(123)456-7890"
+
+  //   var coachTypes = this.getCoachTypes()
+    
+  //   // generate the training type.
+  //   var x = Math.floor(Math.random() * coachTypes.length)
+  //   let sessionType = coachTypes[x]
+
+  //   // from there grab coaches by the type.
+  //   var coaches = this.coachService.getCoachesByType(sessionType)
+  //   x = Math.floor(Math.random() * coaches.length)
+  //   var coach = coaches[x]
+
+  //   // randomly select the date.
+  //   var d = new Date()
+  //   var month = d.getMonth() + 1
+  //   var year = d.getFullYear()
+  //   var date = d.getDate()
+
+  //   var dayOfWeek = d.getDay()
+  //   var randomDayOfWeek = Math.floor((Math.random() * 7))
+
+  //   var dif = randomDayOfWeek - dayOfWeek
+  //   var newDate = date + dif
+
+  //   var dateString = month.toString() + "/" + newDate.toString() + "/" + year.toString()
+  //   console.log(dateString)
+
+  //   if (randomDayOfWeek == 0) {
+  //     // sunday 
+  //   }
+
+
+    
+  //   // randomly select the time.
+    
+  //   // if today & hour > then set status to pending
+  //   // else if today and hour has passed set status to completed
+
+  //   // new Session(username, firstname, lastname, phone, sessionType, coach.email, coach.firstname, "", )
+
+  // }
+
+  // generateDemoCoachSessions() {
+  //   var username = "demo"
+  //   var firstname = "Demo"
+  //   var lastname = "User"
+  //   var phone = "(123)456-7890"
+    
+  //   // generate the training type.
+
+  //   // from there grab 
+    
+  // }
 
   getCoachTypes() {
     return this.demo_coachTypes;
