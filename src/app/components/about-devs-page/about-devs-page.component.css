@@ -1,0 +1,22 @@
+.dev-container {
+    display: grid;
+    grid-template-columns:30% 65%;
+    gap: 1.5rem;
+    grid-template-areas:
+    "dev-img dev-description";
+}
+.dev-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.9) 50%);
+    padding: 12px
+}
+.dev-name, p,li{
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+}
+ul{list-style-type: none;}
+a{color: red;} 
+a:hover{color: darkred;}

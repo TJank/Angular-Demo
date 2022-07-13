@@ -1,5 +1,27 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
-
-/* html, body { height: 100%; } */
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: linear-gradient(to top right,rgba(0, 0, 0, .15), rgba(0, 0, 0, .15)),url(../src/assets/lightbulb.jpg);
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+.container-fluid{
+    animation: transitionIn 1.15s;
+}
+@keyframes transitionIn
+{
+    from{
+        opacity: 0;
+        transform: rotateY(-10deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}

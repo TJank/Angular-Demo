@@ -1,10 +1,9 @@
 <app-landing-navbar></app-landing-navbar>
 
 <body>
-    <header>
-        
+    <header class="container-fluid">
         <h1 id="header" class="glitch text-center"> Welcome To Janky Robotics Co. Training!</h1>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4 btn-group" role="group" aria-label="Basic example">
@@ -17,53 +16,38 @@
             </div>
         </div>
     </header> <br>
-    <div class="container">
-        <div id="login" style="padding-bottom: 30px;">
-            <div class="title row"><h1>Login</h1></div> <br><br>
-            <div class="col-12">
+    <div class="container-fluid loginFormat">
+        <div id="login" class="form-padding">
+            <h1>Login</h1>
+            <div>
                 <form (ngSubmit)="login()" #loginForm="ngForm">
                     <div [hidden]="!not_found_err" class="form-group row errors">
                         <label class="error-msg">Email/Username or Passoword Are Incorrect</label>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-form-control" for="name"><h2> Email/Username: </h2></label>
-                        <div class="align col-7">
-                            <h2> <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Email/Username" required></h2>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" placeholder="Email/Username" required>
                     </div> 
-                    <div class="form-group row">
-                        <label class="col-form-control" for="password"><h2> Password:</h2> </label>
-                        <div class="align col-7">
-                            <h2> <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Password" required> </h2>
-                        </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Password" required>
                     </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-4"></div>
-                            <button class="col-4 btn btn-danger" type="submit" ><h2>Login</h2></button>
-                            <div class="col"></div>
-                        </div>
-                    </div>
+                    <button class="btn btn-danger" type="submit" ><h2>Login</h2></button>
                 </form>
             </div>
         </div>
     </div>
     
     <div id="signup" class="hide container">
-        <div id="signup">
-            <div  class="row title"><h1>Sign Up</h1></div> <br><br>
+        <div id="sign" class="form-padding">
+            <div  class="row"><h1>Sign Up</h1></div> <br><br>
             <div class="col-12">
                 <form (ngSubmit)="register()" #registerForm="ngForm">
                 <div class="form-group row">
-                    <label for="email"><h2>Email: </h2></label>
                     <div class="align col-8">
                         <h2><input type="text" placeholder="Email" class="form-control" id="email" [(ngModel)]="email" name="email" required></h2>
                         <label class="error-msg" [hidden]="!email_err" for="email">Valid Email Required</label>
                     </div>
                 </div>    
                 <div class="form-group row">
-                    <label for="username"> <h2>Username: </h2></label>
                     <div class="align col-8">
                         <h2><input placeholder="Username" type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required></h2>
                         <label class="error-msg" [hidden]="!usr_name_err" for="username">Username Required</label>
@@ -86,7 +70,7 @@
                 </div>    
                 <div class="form-group row">
                     <label for="phonenumber"><h2>Phone Number: </h2></label>
-                    <div class="col-4">
+                    <div class="align col-8">
                         <h2><input placeholder="XXX-XXX-XXXX" pattern="[1-9]{1}[0-9]{11}" type="tel" class="form-control" id="phonenumber" [(ngModel)]="phonenumber" name="phonenumber" required></h2>
                         <label class="error-msg" [hidden]="!phone_err" for="phonenumber">Phone Number Required</label>
                         <label class="error-msg" [hidden]="!phone_format_err" for="phonenumber">Must be XXX-XXX-XXXX format</label>
@@ -115,12 +99,7 @@
                 </div>
                 </form>
             </div>
-            
         </div>
     </div>
-    
 </body>
-
-
-
 <app-footer></app-footer>
