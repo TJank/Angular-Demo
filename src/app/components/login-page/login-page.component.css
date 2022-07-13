@@ -4,26 +4,10 @@
     text-transform: capitalize;
     text-align: center;
 }
-
-.row {
-    padding-bottom: 15px;
-}
-
-.error-msg {
-    color: red;
-}
-
-body{
-    background-image: linear-gradient(to top right,rgba(0, 0, 0, .15), rgba(0, 0, 0, .15)),url(/assets/gloves2.jpg);
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;  
-    padding-bottom: 3.5%;
-}
-
+.row {padding-bottom: 15px;}
+.error-msg {color: red;}
 #header {
-    font-family: 'Special Elite', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     text-shadow: 
         .05em 0 0 red,
         -.025em -.05em 0 green,
@@ -35,21 +19,20 @@ body{
     animation: glitch 525ms infinite;
     animation-duration: 5s;
 }
-
 h1 {
-    font-family: 'Special Elite', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     font-size: 52px;
     color: white;
 }
 
 h2 {
-    font-family: 'Special Elite', sans-serif;
-    font-size: x-large;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: larger;
     color: white;
 }
 
 h3 {
-    font-family: 'Big Shoulders Stencil Text', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
     padding-top: 0px;
     padding-left: 15px;
     font-size: medium;
@@ -80,15 +63,21 @@ h3 {
     top: 0;
     left: 0;
 }
-
-.title {
-    border-bottom : 1px solid white;
+#login{
+    width: 50%;
 }
-
-#login {
+.loginFormat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login, #sign {
     animation: slideIn 1.75s;
 }
 
+.form-padding{
+    padding:65px 0;
+}
 @keyframes slideIn{
     from{
         margin-left: -100%;

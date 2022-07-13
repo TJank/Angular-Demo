@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+/* body{
+    background: url(../../../assets/lightbulb.jpg);
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+} */
 .container-fluid{
     position: absolute;
     top: 30%;

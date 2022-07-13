@@ -5,8 +5,8 @@
         <img id="imgLogo" src="../../../assets/logo.png"></a>
       </div>
     <div class="col-4 col-md-9"> 
-      <a class="navbar-brand" routerLink="/coach/home"><h1>Janky Robotics Co.</h1></a>
-      <a class="navbar-brand" id="contact" disabled><h1>Welcome Coach {{firstname}}</h1></a></div>
+      <a class="navbar-brand" routerLink="/coach/home">Janky Robotics Co.</a>
+      <a class="navbar-brand" id="contact" disabled>Welcome Coach {{firstname}}</a></div>
     <div class="col">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,18 +14,18 @@
     </div>
   </div>
     
-    <div class="collapse navbar-collapse col-md-3" id="navbarContent">
+    <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="" id="contact" routerLink="/coach/home"><h2>Home</h2></a>
+          <a class="nav-link" id="contact" routerLink="/coach/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="" id="contact" routerLink="/coach/edit-profile"><h2>Edit Profile</h2></a>
+          <a class="nav-link" id="contact" routerLink="/coach/edit-profile">Edit Profile</a>
         </li>
         <li class="nav-item">
-          <div (click)="logout()"><a class="" id="logout"><h2>Logout</h2></a></div>
+          <a class="logout nav-link" (click)="logout()" id="logout">Logout</a>
         </li>
       </ul>
     </div>

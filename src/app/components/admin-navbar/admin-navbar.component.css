@@ -1,6 +1,4 @@
-nav {
-    background-image: linear-gradient(to top right, darkred,red);
-}
+nav {background-image: linear-gradient(to top right, darkred,red);}
 .navbar-brand {
     padding-left: 10px;
 }
@@ -11,7 +9,14 @@ nav {
     padding-right: 5px;
     align-content: center;
 }
-
-.navbar {
-    font-family: BananaYeti;
+.nav-title{font-size: x-large;}
+#navbarContent{justify-content: flex-end;}
+.nav-link, .nav-title{
+    font-family: "Do Hyeon", sans-serif;
+    color: white;
+    cursor: pointer;
 }
+.nav-link:hover {
+    color: darkred;
+}
+

@@ -1,0 +1,13 @@
+ .container-fluid{
+    padding:25px 50px;
+ }
+ h1,h2,.table,th{
+    color: white;
+    font-weight: lighter;
+    font-family: 'Do Hyeon', sans-serif;
+}
+.table th {border-top:none}
+.table{
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.8) 40%)
+    
+}

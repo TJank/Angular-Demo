@@ -28,6 +28,7 @@ h1{
     color: white;
     cursor: pointer;
     transition: .75s;
+    
 }
 .weekday:hover {
     background-color: transparent;

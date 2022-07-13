@@ -1,35 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-
-nav {background-image: linear-gradient(to top right, darkred,red);}
-.navbar-brand {padding-left: 10px;}
-
-h1 {
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: x-large;
+nav {
+    background-image: linear-gradient(to top right, darkred,red);
+    
 }
-h2 {
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: medium;
-}
-
-a {color: white;}
-a:hover {
-    text-decoration: none;
-    color: darkred;
+.navbar-brand {
+    padding-left: 10px;
 }
 
 #imgLogo{
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     padding-right: 5px;
     align-content: center;
 }
-
-button {
-    box-shadow: none;
-    border: none;
+.nav-title{font-size: x-large;}
+#navbarContent{justify-content: flex-end;}
+.nav-link, .nav-title {
+    font-family: "Do Hyeon", sans-serif;
+    color: white;
+    cursor: pointer;
 }
-button:focus {
-    box-shadow: none;
-    background-color: darkred;
+.nav-link:hover {
+    color: darkred;
 }
