@@ -1,10 +1,9 @@
 <app-user-navbar></app-user-navbar>
 
-<div class="container">
+<div class="container-fluid">
     <div id="signup">
         <h1>Schedule Training Session</h1>
         <form (ngSubmit)="createNewSession()" #createCoachForm="ngForm">
-
             <div class="form-group">
                 <label for="sessionType">Session Type:</label>
                 <select id="sessionType" name="sessionType" 
@@ -14,7 +13,6 @@
                     </option>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="sessionCoach">Coach:</label>
                 <select id="sessionCoach" name="sessionCoach" 
@@ -25,7 +23,6 @@
                     </option>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="sessionDay">Session Day:</label>
                 <select id="sessionDay" name="sessionDay" (change)="getSessionTimes()"
@@ -35,7 +32,6 @@
                     </option>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="sessionTime">Time:</label>
                 <select id="sessionTime" name="sessionTime" 
@@ -45,8 +41,6 @@
                     </option>
                 </select>
             </div>
-
-
             <div class="form-group">
                 <label for="message">Message to Coach:</label>
                 <textarea class="form-control" 
@@ -54,8 +48,7 @@
                 rows="4"
                 [(ngModel)]="message"></textarea>
             </div>
-            
-            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="sub"><button type="submit" class="btn btn-success">Submit</button></div>
         </form>
     </div>
 </div>

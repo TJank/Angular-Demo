@@ -2,8 +2,6 @@
 .container-fluid
 {
     position: relative;
-    width: 100%;
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +9,22 @@
 } 
 #edit{
     font-family: "Do Hyeon";
+    color: white;
+    width: 35%;
+}
+.sub{
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    border-color: red;
+    background-color: red;
+    color: white;
+    width: 50%;
+}
+.btn:hover {
+    border-color: darkred;
+    background-color:darkred;
     color: white;
 }
 #page-footer{

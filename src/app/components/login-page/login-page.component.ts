@@ -44,11 +44,14 @@ export class LoginPageComponent implements OnInit {
   loginTransition() {
     document.getElementById("signup").style.display = "none";
     document.getElementById("login").style.display = "block";
+    document.getElementById("page-footer").style.position = "absolute"
   }
 
   signupTransition() {
-    document.getElementById("signup").style.display = "block";
+    document.getElementById("signup").style.display = "flex";
+    document.getElementById("signup").style.justifyContent = "center";
     document.getElementById("login").style.display = "none";
+    document.getElementById("page-footer").style.position = "relative"
   }
 
   login() {

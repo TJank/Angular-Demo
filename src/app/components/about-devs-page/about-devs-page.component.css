@@ -5,13 +5,13 @@
     grid-template-areas:
     "dev-img dev-description";
 }
+
 .dev-description{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.9) 50%);
-    padding: 12px
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.85) 50%);
+    padding: 15px;
 }
 .dev-name, p,li{
     color: white;

@@ -11,12 +11,14 @@ nav {background-image: linear-gradient(to top right, darkred,red);}
     padding-right: 5px;
     align-content: center;
 }
-
-.navbar,a {
+.nav-link, .nav-title {
     font-family: "Do Hyeon", sans-serif;
     color: white;
+    cursor: pointer;
 }
-
+.nav-link:hover {
+    color: darkred;
+}
 .nav-link {
     font-family: "Do Hyeon", sans-serif;
     color: white;
