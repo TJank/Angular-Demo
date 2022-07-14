@@ -1,0 +1,28 @@
+#signup{
+    font-family: "Do Hyeon";
+    color: white;
+    width: 45%;
+}
+.container-fluid
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2.5% 0;
+} 
+.sub{
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    border-color: red;
+    background-color: red;
+    color: white;
+    width: 50%;
+}
+.btn:hover {
+    border-color: darkred;
+    background-color:darkred;
+    color: white;
+}

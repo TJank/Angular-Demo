@@ -10,7 +10,7 @@ p,h1,h2,li{font-family: 'Do Hyeon', sans-serif;}
     background-image: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
     color: white;
     border-radius: 8px;
-    padding: 12.5px; 
+    padding: 12.5px;     
 }
 .img-fluid{
     border-radius: 8px;
@@ -20,14 +20,12 @@ p,h1,h2,li{font-family: 'Do Hyeon', sans-serif;}
     border-radius: 8px;
     padding: 12.5px;
     color: white;
-    margin-right: 22.5%;
     background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.5) 40%)
 }
 .coach{
     border-radius: 8px;
     padding: 12.5px;
     color: white;
-    margin-right: 22.5%;
     background-image: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75))
 }
 .robert, .tyler{
