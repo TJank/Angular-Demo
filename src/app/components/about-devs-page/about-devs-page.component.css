@@ -20,3 +20,12 @@
 ul{list-style-type: none;}
 a{color: red;} 
 a:hover{color: darkred;}
+
+@media screen and (max-width: 450px) {
+    .dev-container{
+        grid-template-columns:100%;
+        grid-template-areas:
+        "dev-img"
+        "dev-description";
+    }
+}

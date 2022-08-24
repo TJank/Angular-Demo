@@ -2,7 +2,7 @@
 
 nav {background-image: linear-gradient(to top right, darkred,red);}
 .navbar-brand {padding-left: 10px;}
-
+#navbarContent{justify-content: flex-end;}
 h1 {
     font-family: 'Do Hyeon', sans-serif;
     font-size: x-large;
@@ -33,3 +33,4 @@ button:focus {
     box-shadow: none;
     background-color: darkred;
 }
+

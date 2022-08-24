@@ -1,13 +1,33 @@
  .container-fluid{
-    padding:25px 50px;
+    width: 92.5%;
+    text-align: justify;
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, .75),rgba(0,0,0,.85) 75%);
+    border-radius: 8px;
+    padding: 24px;
  }
+ #page-footer{
+    position: sticky;
+    top: 100vh;
+    width: 100%;
+}
+#coaches, #users {
+    overflow-x: auto;
+}
+ .center{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
  h1,h2,.table,th{
     color: white;
     font-weight: lighter;
     font-family: 'Do Hyeon', sans-serif;
 }
 .table th {border-top:none}
-.table{
-    background-image: linear-gradient(to top left,rgba(252, 2, 2, 0.7),rgba(0,0,0,.8) 40%)
-    
+
+@media screen and (max-width: 376px) {
+    .center{ 
+        height: auto;  
+        padding: 24px 0;
+    }
 }

@@ -2,7 +2,8 @@ nav {background-image: linear-gradient(to top right, darkred,red);}
 .navbar-brand {
     padding-left: 10px;
 }
-.welcome{display: flex;}
+.welcome{padding: 5px;}
+
 #imgLogo{
     width: 30px;
     height: 30px;
@@ -17,3 +18,8 @@ nav {background-image: linear-gradient(to top right, darkred,red);}
     cursor: pointer;
 }
 .nav-link:hover {color: darkred;}
+
+@media screen and (max-width: 450px) {
+    .nav-content{display: flex;}
+    .navbar{padding: 0;}
+}

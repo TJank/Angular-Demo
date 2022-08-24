@@ -53,9 +53,8 @@ input{font-family: 'Do Hyeon', sans-serif;}
 
 @media screen and (max-width:450px){
     label, .dob,.col-sm-6 {padding-left: 0; padding-right: 0;}
-    #login{
-        width: 75%;
-    }
+    #login{width: 75%;}
+    .container-fluid{top: 37.5%}
 }
 .error-msg {
     color: red;

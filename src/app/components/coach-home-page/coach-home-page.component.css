@@ -19,7 +19,5 @@ h2, .table td,.table th{
 }
 
 @media screen and (max-width: 450px) {
-    #pending_sessions, #accepted_sessions, #completed_sessions {
-        overflow-x: auto;
-    }
+    #pending_sessions, #accepted_sessions, #completed_sessions {overflow-x: auto;}
 }
