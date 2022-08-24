@@ -1,18 +1,13 @@
 <app-landing-navbar></app-landing-navbar>
 
-<body>
     <header class="container-fluid">
         <h1 id="header" class="glitch text-center"> Welcome To Janky Robotics Co. Training!</h1>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4 btn-group" role="group" aria-label="Basic example">
-                    <button type="button" (click)="loginTransition()" class="btn btn-danger">
-                        <h2>Login</h2>
-                    </button>
+            <div class="row logSign">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" (click)="loginTransition()" class="btn btn-danger"><h2>Login</h2></button>
                     <button type="button" (click)="signupTransition()" class="btn btn-danger"><h2>Sign Up</h2></button>
                 </div>
-                <div class="col-3"></div>
             </div>
         </div>
     </header>
@@ -86,5 +81,4 @@
             </form>
         </div>
     </div>
-</body>
 <app-footer id="page-footer"></app-footer>

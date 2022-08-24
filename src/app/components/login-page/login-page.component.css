@@ -51,6 +51,11 @@ h3 {
     border-color: darkred;
     background-color:darkred;
 }
+.btn-group{width: 50%;}
+.logSign{
+    display: flex;
+    justify-content: center;
+}
 .hide {display: none;}
 #header span {
     position: absolute;
@@ -76,6 +81,14 @@ h3 {
 }
 .login-padding{padding:65px 0;}
 .sign-padding{padding:25px 0;}
+
+@media screen and (max-width:450px){
+    .btn-group{width: 100%;}
+    #login, #sign{width: 75%;}
+}
+@media screen and (max-width:376px){
+    #page-footer{position: relative;}
+}
 @keyframes slideIn{
     from{
         margin-left: -100%;

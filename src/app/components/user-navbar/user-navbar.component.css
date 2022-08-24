@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 nav {background-image: linear-gradient(to top right, darkred,red);}
-.navbar-brand {
-    padding-left: 10px;
-}
+.navbar-brand {padding-left: 10px;}
 
 #imgLogo{
     width: 30px;

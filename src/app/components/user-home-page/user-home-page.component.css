@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+h2, .table td,.table th{
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+}
+.center{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.container-fluid {
+    width: 92.5%;
+    text-align: justify;
+    background-image: linear-gradient(to top left,rgba(252, 2, 2, .75),rgba(0,0,0,.85) 75%);
+    border-radius: 8px;
+    margin-top: 36px;
+    padding: 24px;
+}
+#page-footer{
+    position: sticky;
+    top: 100vh;
+    width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+    #pending_sessions, #accepted_sessions, #completed_sessions {
+        overflow-x: auto;
+    }
+    body{height: 100vh;}
+    /* #page-footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    } */
+    .center{ height: 80%;  }
+}
+
+@media screen and (max-width: 376px) {
+    .center{ height: auto;  }
+}

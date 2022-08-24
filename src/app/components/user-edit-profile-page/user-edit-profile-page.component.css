@@ -37,7 +37,11 @@
     .container-fluid{margin-top: 35%;}
 
 }
-
+@media screen and (max-width:450px){
+    #edit{
+        width: 85%
+    }
+}
 @media screen and (max-width:376px){
     .container-fluid{margin-top: 15%;}
 
