@@ -63,4 +63,17 @@ export class SessionService {
     return rtn_sessions;
   }
 
+  getUserCompletedOrCancelledSessions(user:User) {
+    var rtn_sessions: Session[] = [];
+    this.dbService.demo_sessions.forEach(session => {
+      if(session.session_status === "completed" || session.session_status === "cancelled") {
+        if(session.user === user.username) {
+          rtn_sessions.push(session)
+        }
+      }
+    });
+
+    return rtn_sessions;
+  }
+
 }

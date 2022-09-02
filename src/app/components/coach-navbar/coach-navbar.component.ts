@@ -29,7 +29,7 @@ export class CoachNavbarComponent implements OnInit {
       this.username = this.coach_map.get(this.loginService.SESSION_USERNAME)
       this.firstname = this.coach_map.get(this.loginService.SESSION_FIRSTNAME)
     }
-    // console.log("user map values are " + this.role +", " + this.username +", " + this.firstname)
+    
   }
 
   logout() {

@@ -75,7 +75,7 @@ export class CoachService {
 
   }
 
-  updateCoachAvailability(coach:Coach, sun:Number[], mon:Number[], tues:Number[], wed:Number[], thur:Number[], fri:Number[], sat:Number[]) {
+  updateCoachAvailability(coach:Coach, sun:number[], mon:number[], tues:number[], wed:number[], thur:number[], fri:number[], sat:number[]) {
     coach.sundayavailability = sun;
     coach.mondayavailability = mon;
     coach.tuesdayavailability = tues;

@@ -26,21 +26,154 @@ export class DatabaseService {
     new Coach(4, 'zeuschampion@gmail.com', 'Zeus', 'Martinez', [], [16,17,18,19,20], [16,17,18,19,20], [16,17,18,19,20], [16,17,18,19,20], [16,17,18,19,20], [], 'zeus', 'Boxing')
   ];
 
-  demo_sessions:Session[] = [
-    new Session("fullHouse", "Bob", "Sage", "(123)226-5555", "Boxing", "martineztraining@gmail.com", "Pepe", "", "11/04/2021", 16,"pending"),
-    new Session("demo", "Demo", "User", "(123)456-7890", "Boxing", "martineztraining@gmail.com", "Pepe", "can we focus on footwork?", "11/04/2021", 17,"pending"),
-    new Session("demo", "Demo", "User", "(123)456-7890", "Boxing", "martineztraining@gmail.com", "Pepe", "", "11/05/2021", 16,"pending"),
-    // new Session("demo", "Demo", "User", "(123)456-7890", "Boxing", "martineztraining@gmail.com", "Pepe", "can we train back?", "11/05/2021", 17,"accepted"),
-    // new Session("demo", "Demo", "User", "(123)456-7890", "Boxing", "martineztraining@gmail.com", "Pepe", "can we train back?", "11/05/2021", 18,"accepted"),
-    // new Session("demo", "Demo", "User", "(123)456-7890", "Boxing", "martineztraining@gmail.com", "Pepe", "can we train back?", "11/05/2021", 19,"accepted"),
-    new Session("demo", "Demo", "User", "(123)456-7890", "Boxing", "martineztraining@gmail.com", "Pepe", "can we train back?", "11/05/2021", 20,"accepted"),
-    new Session("demo", "Demo", "User", "(123)456-7890","Boxing", "democoach", "Demo", "", "10/04/2021", 16,"completed")
-  
-  ];
+  demo_sessions:Session[] = [];
 
   demo_admins:Admin[] = [
     new Admin(1, "admin", "admin@gmail.com", "Admin", "Test", "demoadmin")
   ];
+
+  generateSessionData() {
+    var curr = new Date;
+    var first = curr.getDate() - curr.getDay();
+    var today_of_week = curr.getDay();
+
+    // set days of week
+    var sunday = new Date(curr.setDate(first));
+
+    var monday = new Date()
+    monday.setDate(sunday.getDate() + 1);
+
+    var tuesday = new Date()
+    tuesday.setDate(monday.getDate() + 1);
+    
+    var wednesday = new Date()
+    wednesday.setDate(tuesday.getDate() + 1);
+
+    var thursday = new Date()
+    thursday.setDate(wednesday.getDate() + 1);
+
+    var friday = new Date()
+    friday.setDate(thursday.getDate() + 1);
+
+    var saturday = new Date()
+    saturday.setDate(friday.getDate() + 1);
+
+    var date_dates = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
+
+    // format date data
+    var sun_str = this.getFormattedDate(sunday)
+    var mon_str = this.getFormattedDate(monday)
+    var tue_str = this.getFormattedDate(tuesday)
+    var wed_str = this.getFormattedDate(wednesday)
+    var thur_str = this.getFormattedDate(thursday)
+    var fri_str = this.getFormattedDate(friday)
+    var sat_str = this.getFormattedDate(saturday)
+
+    var str_dates = [sun_str, mon_str, tue_str, wed_str, thur_str, fri_str, sat_str]
+
+
+    // create sessions & push to array
+    var user = this.demo_users[1]
+    var coach = this.demo_coaches[2]
+
+    for(var x=0; x<5; x++) {
+      // random generators
+      
+      var ran_date = this.getRandomInt(7)
+      var oneOr2 = this.getRandomInt(2)
+      var day_of_week_times_array:number[] = []
+      switch(true)  {
+        case (ran_date == 0):
+          // sunday avail
+          day_of_week_times_array = coach.sundayavailability
+          break;
+        
+        case (ran_date == 1):
+          // sunday avail
+          day_of_week_times_array = coach.mondayavailability
+          break;
+  
+        case (ran_date == 2):
+          // sunday avail
+          day_of_week_times_array = coach.tuesdayavailability
+          break;
+  
+        case (ran_date == 3):
+          // sunday avail
+          day_of_week_times_array = coach.wednesdayavailability
+          break;
+  
+        case (ran_date == 4):
+          // sunday avail
+          day_of_week_times_array = coach.thursdayavailability
+          break;
+  
+        case (ran_date == 5):
+          // sunday avail
+          day_of_week_times_array = coach.fridayavailability
+          break;
+  
+        case (ran_date == 6):
+          // sunday avail
+          day_of_week_times_array = coach.saturdayavailability
+          break;
+      }
+
+      var session_ran_time = this.getRandomInt(day_of_week_times_array.length)
+      var session_time = day_of_week_times_array[session_ran_time]
+      var session_status = ""
+      var session_date = str_dates[ran_date]
+
+
+      if(ran_date < today_of_week) {
+        // behind current day... cancelled or completed
+        if(oneOr2 == 0) {
+          session_status = "cancelled"
+        } else {
+          session_status = "completed"
+        }
+      }
+      else if(ran_date == today_of_week) {
+        // same day only accepted
+        session_status = "accepted"
+      }
+      else {
+        // in future... accpeted or pending
+        if(oneOr2 == 0) {
+          session_status = "accepted"
+        } else {
+          session_status = "pending"
+        }
+      }
+
+
+      var temp_session = new Session(user.username, user.firstname, user.lastname, user.phonenumber, coach.coachtype, coach.email, coach.firstname, "", session_date, session_time, session_status)
+      console.log(temp_session)
+      this.demo_sessions.push(temp_session)
+    }
+  }
+
+  getCoachAvailability(date_num:number) {
+    var coach = this.demo_coaches[2]
+    var day_of_week_times_array = this.demo_coaches[2].saturdayavailability
+    
+  }
+
+  getRandomInt(max:number) {
+    return Math. floor(Math. random() * max);
+  }
+
+  getFormattedDate(date:Date) {
+    var year = date.getFullYear();
+  
+    var month = (1 + date.getMonth()).toString();
+    month = month.length > 1 ? month : '0' + month;
+  
+    var day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+    
+    return month + '/' + day + '/' + year;
+  }
 
   getCoachTypes() {
     return this.demo_coachTypes;

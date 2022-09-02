@@ -23,6 +23,7 @@ export class CoachHomePageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.dbService.generateSessionData()
     if (!this.loginService.isLoggedIn()) {
       this.router.navigateByUrl("/login");
     }
