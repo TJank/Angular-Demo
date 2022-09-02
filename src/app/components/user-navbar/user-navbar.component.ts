@@ -30,8 +30,6 @@ export class UserNavbarComponent implements OnInit {
       this.role = this.user_map.get(this.loginService.SESSION_ROLE)
       this.username = this.user_map.get(this.loginService.SESSION_USERNAME)
       this.firstname = this.user_map.get(this.loginService.SESSION_FIRSTNAME)
-      // this.sessionService.setCurrentUser(this.username)
-      // console.log(this.username)
     }
   }
 

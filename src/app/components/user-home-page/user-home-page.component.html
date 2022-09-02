@@ -3,7 +3,7 @@
 <div class="center">
     <div class="container-fluid">
         <div id="pending_sessions">
-           <h2>Pending Sessions:</h2>
+            <h2>Pending Sessions:</h2>
             <table class="table table-striped">
                 <!-- <thead>
                     <th>{{ one_week[0] }}</th>
@@ -38,38 +38,70 @@
                         <!-- <td><button (click)="loadSession(session)">View</button></td> -->
                     </tr>
                 </tbody>
-              </table>
+            </table>
         </div>
         <br><br><br>
         <div id="accepted_sessions">
             <h2>Scheduled Sessions:</h2>
-             <table class="table table-striped">
-                 <thead>
-                     <tr>
-                         <th scope="col">#</th>
-                         <th scope="col">Date</th>
-                         <th scope="col">Time</th>
-                         <th scope="col">Training</th>
-                         <th scope="col">Coach Name</th>
-                         <th scope="col">Coach email</th>
-                         <th scope="col">Status</th>
-                         <th scope="col"></th>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <tr *ngFor="let session of acceptedSessions; index as i">
-                         <th scope="row">{{ i + 1 }}</th>
-                         <td>{{ session.date }}</td>
-                         <td>{{ session.time }}:00</td>
-                         <td>{{ session.session_type }}</td>
-                         <td>{{ session.coach_name }}</td>
-                         <td>{{ session.coach_email }}</td>
-                         <td>{{ session.session_status }}</td>
-                         <!-- <td><button (click)="loadSession(session)">View</button></td> -->
-                     </tr>
-                 </tbody>
-               </table>
-         </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Training</th>
+                        <th scope="col">Coach Name</th>
+                        <th scope="col">Coach email</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let session of acceptedSessions; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ session.date }}</td>
+                        <td>{{ session.time }}:00</td>
+                        <td>{{ session.session_type }}</td>
+                        <td>{{ session.coach_name }}</td>
+                        <td>{{ session.coach_email }}</td>
+                        <td>{{ session.session_status }}</td>
+                        <!-- <td><button (click)="loadSession(session)">View</button></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br><br><br>
+
+        <div id="completed_sessions">
+            <h2>Session History:</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Training</th>
+                        <th scope="col">Coach Name</th>
+                        <th scope="col">Coach email</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let session of completedOrCancelledSessions; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ session.date }}</td>
+                        <td>{{ session.time }}:00</td>
+                        <td>{{ session.session_type }}</td>
+                        <td>{{ session.coach_name }}</td>
+                        <td>{{ session.coach_email }}</td>
+                        <td>{{ session.session_status }}</td>
+                        <!-- <td><button (click)="loadSession(session)">View</button></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <br><br>

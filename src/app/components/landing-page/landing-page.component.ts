@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from 'src/app/services/data-services/temp-data/database.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,7 +10,6 @@ export class LandingPageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

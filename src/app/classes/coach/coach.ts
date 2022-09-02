@@ -5,13 +5,13 @@ export class Coach {
     public firstname:string;
     public lastname:string;
 
-    public sundayavailability:Number[];
-    public mondayavailability:Number[];
-    public tuesdayavailability:Number[];
-    public wednesdayavailability:Number[];
-    public thursdayavailability:Number[];
-    public fridayavailability:Number[];
-    public saturdayavailability:Number[];
+    public sundayavailability:number[];
+    public mondayavailability:number[];
+    public tuesdayavailability:number[];
+    public wednesdayavailability:number[];
+    public thursdayavailability:number[];
+    public fridayavailability:number[];
+    public saturdayavailability:number[];
 
     public password:string;
     public coachtype:string;
@@ -22,13 +22,13 @@ export class Coach {
                 email:string, 
                 firstname:string, 
                 lastname:string, 
-                sundayavailability:Number[], 
-                mondayavailability:Number[],
-                tuesdayavailability:Number[],
-                wednesdayavailability:Number[],
-                thursdayavailability:Number[],
-                fridayavailability:Number[],
-                saturdayavailability:Number[],
+                sundayavailability:number[], 
+                mondayavailability:number[],
+                tuesdayavailability:number[],
+                wednesdayavailability:number[],
+                thursdayavailability:number[],
+                fridayavailability:number[],
+                saturdayavailability:number[],
                 password:string,
                 coachType:string 
                 ){

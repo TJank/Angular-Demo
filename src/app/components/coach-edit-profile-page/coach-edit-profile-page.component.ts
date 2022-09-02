@@ -65,13 +65,13 @@ export class CoachEditProfilePageComponent implements OnInit {
   disabled = true;
   hidden = true;
 
-  newSunAvail:Number[] = [];
-  newMonAvail:Number[] = [];
-  newTueAvail:Number[] = [];
-  newWedAvail:Number[] = [];
-  newThuAvail:Number[] = [];
-  newFriAvail:Number[] = [];
-  newSatAvail:Number[] = [];
+  newSunAvail:number[] = [];
+  newMonAvail:number[] = [];
+  newTueAvail:number[] = [];
+  newWedAvail:number[] = [];
+  newThuAvail:number[] = [];
+  newFriAvail:number[] = [];
+  newSatAvail:number[] = [];
 
   top:number[][] = [
                     [5,6,7,8,9,10],
@@ -195,37 +195,37 @@ export class CoachEditProfilePageComponent implements OnInit {
       var elID = elements[i].id;
       if(elID.includes("sun")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newSunAvail.push(Number(time));
+        this.newSunAvail.push(parseInt(time));
       }
 
       if(elID.includes("mon")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newMonAvail.push(Number(time));
+        this.newMonAvail.push(parseInt(time));
       }
 
       if(elID.includes("tue")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newTueAvail.push(Number(time));
+        this.newTueAvail.push(parseInt(time));
       }
 
       if(elID.includes("wed")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newWedAvail.push(Number(time));
+        this.newWedAvail.push(parseInt(time));
       }
 
       if(elID.includes("thu")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newThuAvail.push(Number(time));
+        this.newThuAvail.push(parseInt(time));
       }
 
       if(elID.includes("fri")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newFriAvail.push(Number(time));
+        this.newFriAvail.push(parseInt(time));
       }
 
       if(elID.includes("sat")) {
         var time = elID.substr(elID.indexOf("_") + 1);
-        this.newSatAvail.push(Number(time));
+        this.newSatAvail.push(parseInt(time));
       }
 
     }

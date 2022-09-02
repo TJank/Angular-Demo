@@ -35,7 +35,6 @@ export class CoachViewSessionPageComponent implements OnInit {
   save() {
     this.session.session_status = this.new_status;
     this.coachService.updateSession(this.session);
-    console.log(this.dbService.demo_sessions)
     this.router.navigateByUrl("/coach/home")
     
   }
